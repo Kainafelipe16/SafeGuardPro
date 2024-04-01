@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.TelaInicialFuncionarioFragment">
+
+    <ImageView
+        android:id="@+id/imgTela"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/frame_1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/projeto_login"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewUser"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="200dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/user"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewNome"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="200dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/cardViewUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" >
+
+    <TextView
+        android:id="@+id/tvBemVindo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:text="BEM VINDO,  KAINÃ !"
+        android:textSize="25sp"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints,RtlCompat" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewEpi1"
+        android:layout_width="125dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cardViewNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" >
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/capacete" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewEpi2"
+        android:layout_width="125dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="25dp"
+        app:cardCornerRadius="20sp"
+        app:layout_constraintTop_toBottomOf="@id/cardViewEpi1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" >
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/colete" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewEpi3"
+        android:layout_width="125dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="25dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cardViewEpi2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" >
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bota" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
