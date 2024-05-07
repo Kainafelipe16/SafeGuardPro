@@ -7,7 +7,7 @@
     tools:context=".view.MainActivity">
 
         <ImageView
-            android:id="@+id/imgpretin"
+            android:id="@+id/imgfundo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitStart"
@@ -26,10 +26,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imgpretin" />
+            app:layout_constraintTop_toTopOf="@+id/imgfundo" />
 
         <EditText
-            android:id="@+id/edtemai"
+            android:id="@+id/edtemail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
@@ -54,7 +54,7 @@
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtemai" />
+            app:layout_constraintTop_toBottomOf="@+id/edtemail" />
 
         <Button
             android:id="@+id/btnLogar"
@@ -78,16 +78,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/mask_group_removebg_preview" />
-
-        <ImageView
-            android:id="@+id/imgflesha2"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

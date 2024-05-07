@@ -24,6 +24,15 @@
             android:layout_height="200dp"
             android:src="@drawable/projeto_login"
             app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="251dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mask_group_removebg_preview" />
 
         <ImageView
             android:id="@+id/imgAvatar1"
