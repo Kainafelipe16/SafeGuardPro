@@ -10,11 +10,12 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="TODO"
         android:src="@drawable/rectangle_5__6_"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="138dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        android:contentDescription="TODO" />
+        tools:layout_editor_absoluteY="138dp" />
 
     <TextView
         android:id="@+id/tvlogo"
@@ -49,9 +50,9 @@
         android:layout_height="wrap_content"
         android:contentDescription=""
         android:src="?attr/actionModeCloseDrawable"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="36dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="400dp"
