@@ -27,8 +27,7 @@ class TelaInicialFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
       binding.btnLogar.setOnClickListener {
-          findNavController().navigate(R.id.loginFragment3)
-
+          findNavController().navigate(R.id.loginFragment)
       }
     }
 }

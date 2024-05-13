@@ -11,15 +11,11 @@
         android:id="@+id/imgTelaFuncionarioDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:contentDescription="Tela"
+        android:contentDescription="Tela de detalhes do funcionário"
         android:src="@drawable/rectangle_5__6_"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
         android:id="@+id/imageView11"
@@ -28,10 +24,10 @@
         android:src="@drawable/ic_user1"
         app:tint="#fff"
         android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgTelaFuncionarioDetail"
-        android:contentDescription="imagem do funcionário" />
+        android:contentDescription="Imagem do funcionário" />
 
 
     <TextView

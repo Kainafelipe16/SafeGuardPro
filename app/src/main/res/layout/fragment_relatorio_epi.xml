@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:listitem="@layout/lista_epi"/>
+        tools:listitem="@layout/list_item_epi"/>
 
     <ImageButton
         android:layout_width="60dp"
