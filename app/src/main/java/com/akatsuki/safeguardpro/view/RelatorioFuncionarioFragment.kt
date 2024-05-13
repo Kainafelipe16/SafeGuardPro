@@ -35,19 +35,27 @@ class RelatorioFuncionarioFragment : Fragment() {
 
         //Quando clicar em algum item da lista
         adapter = FuncionarioAdapter(viewModel.funcionarioList.value) { funcionario ->
-            val recycler = binding.rvListaFuncionario
-            recycler.layoutManager = LinearLayoutManager(requireContext())
-            recycler.adapter = adapter
 
-            viewModel.funcionarioList.observe(viewLifecycleOwner) {
-                adapter.updateFuncionarios(it)
-            }
+            findNavController().navigate(R.id.detailFuncionarioFragment2, arguments)
 
-            binding.imgBtnAdd.setOnClickListener {
-                findNavController().navigate(R.id.cadastroFuncionarioFragment)
-            }
-
-            viewModel.load()
         }
+
+        //Configura a recycler
+        val recycler = binding.rvListaFuncionario
+        recycler.layoutManager = LinearLayoutManager(requireContext())
+        recycler.adapter = adapter
+
+        viewModel.funcionarioList.observe(viewLifecycleOwner) {
+            adapter.updateFuncionarios(it)
+        }
+
+        //Navegar para a tela de cadastro de pessoa
+        binding.imgBtnAdd.setOnClickListener {
+            findNavController().navigate(R.id.cadastroFuncionarioFragment)
+        }
+
+        //Carregar as pessoas cadastradas
+        viewModel.load()
     }
+
 }

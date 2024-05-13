@@ -7,15 +7,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/imgTela"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/frame_1"
-            tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_gradient">
 
         <ImageView
             android:id="@+id/imgLogo"
@@ -52,20 +45,17 @@
             app:cardCornerRadius="200dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewUser"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintTop_toBottomOf="@id/cardViewUser" >
 
             <TextView
                 android:id="@+id/tvBemVindo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
                 android:text="BEM VINDO,  KAINÃ !"
-                android:textAlignment="center"
                 android:textColor="@color/white"
+                android:gravity="center"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                tools:ignore="MissingConstraints,RtlCompat" />
+                android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -76,8 +66,7 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewNome"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintTop_toBottomOf="@id/cardViewNome">
 
             <ImageView
                 android:id="@+id/imgRf"
@@ -94,8 +83,7 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewRf"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintTop_toBottomOf="@id/cardViewRf">
 
             <ImageView
                 android:id="@+id/imgCapacete"
@@ -112,8 +100,7 @@
             app:cardCornerRadius="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewEpi1"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintTop_toBottomOf="@id/cardViewEpi1" >
 
             <ImageView
                 android:id="@+id/imgColete"
@@ -130,8 +117,7 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewEpi2"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintTop_toBottomOf="@id/cardViewEpi2" >
 
             <ImageView
                 android:id="@+id/imgBota"
@@ -139,6 +125,5 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/bota" />
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

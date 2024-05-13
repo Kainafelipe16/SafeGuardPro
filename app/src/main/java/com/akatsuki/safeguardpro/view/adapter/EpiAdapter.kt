@@ -17,6 +17,7 @@ class EpiAdapter(
     class EpiViewHolder(private val binding: ListItemEpiBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(epi: Epi, clickListener: (Epi) -> Unit) {
+            //setar informações
         }
     }
 

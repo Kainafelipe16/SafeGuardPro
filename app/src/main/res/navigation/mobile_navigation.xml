@@ -33,7 +33,7 @@
         android:label="RelatorioFuncionarioFragment" />
     <fragment
         android:id="@+id/telaInicialFuncionarioFragment"
-        android:name="com.akatsuki.safeguardpro.view.TelaInicialFuncionarioFragment"
+        android:name="com.akatsuki.safeguardpro.view.TelaInicialSupervisorFragment"
         android:label="TelaInicialFuncionarioFragment" />
     <fragment
         android:id="@+id/cadastroFuncionarioFragment"

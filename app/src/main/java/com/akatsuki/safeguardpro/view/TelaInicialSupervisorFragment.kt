@@ -7,17 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.akatsuki.safeguardpro.R
-import com.akatsuki.safeguardpro.databinding.FragmentTelaInicialFuncionarioBinding
+import com.akatsuki.safeguardpro.databinding.FragmentTelaInicialSupervisorBinding
 
-class TelaInicialFuncionarioFragment : Fragment() {
-    private var _binding: FragmentTelaInicialFuncionarioBinding? = null
-    private val binding: FragmentTelaInicialFuncionarioBinding get() = _binding!!
+class TelaInicialSupervisorFragment : Fragment() {
+    private var _binding: FragmentTelaInicialSupervisorBinding? = null
+    private val binding: FragmentTelaInicialSupervisorBinding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentTelaInicialFuncionarioBinding.inflate(inflater, container, false)
+        _binding = FragmentTelaInicialSupervisorBinding.inflate(inflater, container, false)
         return binding.root
     }
 

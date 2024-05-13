@@ -21,6 +21,7 @@ class FuncionarioAdapter(
     class FuncionarioViewHolder(private val binding: ListItemFuncionarioBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(funcionario: Funcionario, clickListener: (Funcionario) -> Unit) {
+            //setar informações
         }
     }
 
