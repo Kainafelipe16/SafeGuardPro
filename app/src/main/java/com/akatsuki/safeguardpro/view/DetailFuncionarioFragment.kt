@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.akatsuki.safeguardpro.R
 import com.akatsuki.safeguardpro.databinding.FragmentDetailEPIBinding
 import com.akatsuki.safeguardpro.databinding.FragmentDetailFuncionarioBinding
@@ -25,5 +26,12 @@ class DetailFuncionarioFragment : Fragment() {
         // Configurar binding
         _binding = FragmentDetailFuncionarioBinding.inflate(inflater, container, false)
         return binding.root
+
+
+//        //Navegar para a tela de cadastro de pessoa
+//        binding. .setOnClickListener {
+//            findNavController().navigate(R.id.detailFuncionarioFragment2)
+//        }
     }
+
 }

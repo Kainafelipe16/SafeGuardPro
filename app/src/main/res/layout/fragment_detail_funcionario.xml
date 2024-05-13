@@ -7,20 +7,19 @@
     tools:context=".view.DetailFuncionarioFragment">
 
 
-
     <ImageView
         android:id="@+id/imgTelaFuncionarioDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="89dp"
+        android:layout_marginTop="160dp"
+        android:contentDescription="Tela"
         android:src="@drawable/rectangle_5__6_"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Tela" />
-
+        app:layout_constraintVertical_bias="0.714" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -118,11 +117,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Telefone: "
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblCPF" />
 
@@ -131,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="99100-0000"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/lblTelefone"

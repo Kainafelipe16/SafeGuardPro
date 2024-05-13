@@ -1,116 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/rectangle_5__6_">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/imgLogo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="200dp"
+        android:src="@drawable/projeto_login"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imgTela"
-            android:layout_width="match_parent"
-            android:layout_height="750dp"
-            android:src="@drawable/frame_1"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/list_item_funcionario"/>
 
-        <ImageView
-            android:id="@+id/imgLogo"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/projeto_login"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imgAvatar1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgLogo"
-            android:layout_marginTop="25dp"
-            android:layout_marginStart="20dp"
-            tools:srcCompat="@tools:sample/avatars"
-            tools:ignore="MissingConstraints"/>
-
-        <EditText
-            android:id="@+id/edtNome1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/imgAvatar1"
-            app:layout_constraintTop_toBottomOf="@id/imgLogo"
-            android:layout_marginTop="55dp"
-            android:layout_marginStart="25dp"
-            android:background="@color/white"
-            android:backgroundTint="@color/white"
-            android:ems="10"
-            android:hint="Nome: "
-            android:text="Ronaldo Alves"
-            tools:ignore="MissingConstraints" />
-
-        <EditText
-            android:id="@+id/edtId1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/imgAvatar1"
-            app:layout_constraintTop_toBottomOf="@id/edtNome1"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="25dp"
-            android:background="@color/white"
-            android:backgroundTint="@color/white"
-            android:ems="10"
-            android:hint="ID: "
-            android:text="7724"
-            tools:ignore="MissingConstraints" />
-
-        <ImageView
-            android:id="@+id/imgAvatar2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgAvatar1"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp"
-            tools:ignore="MissingConstraints"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <EditText
-            android:id="@+id/edtNome2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/imgAvatar2"
-            app:layout_constraintTop_toBottomOf="@id/edtId1"
-            android:layout_marginTop="120dp"
-            android:layout_marginLeft="20dp"
-            android:background="@color/white"
-            android:backgroundTint="@color/white"
-            android:ems="10"
-            android:hint="Nome:"
-            android:text="Clotilde Neves" />
-
-        <EditText
-            android:id="@+id/edtId2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/imgAvatar2"
-            app:layout_constraintTop_toBottomOf="@id/edtNome2"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:background="@color/white"
-            android:backgroundTint="@color/white"
-            android:ems="10"
-            android:hint="ID: "
-            android:text="7839" />
-
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/baseline_add_24"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_add_24"/>
+</LinearLayout>

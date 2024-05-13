@@ -10,7 +10,7 @@
         android:id="@+id/imgTelaEpiDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="200dp"
         android:src="@drawable/rectangle_5__3_"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

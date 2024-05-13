@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/telaInicialFragment">
+    app:startDestination="@id/detailEPIFragment2">
 
     <activity
         android:id="@+id/mainActivity"
@@ -45,4 +45,14 @@
         android:name="com.akatsuki.safeguardpro.view.TelaInicialFragment"
         android:label="fragment_tela_inicial"
         tools:layout="@layout/fragment_tela_inicial" />
+    <fragment
+        android:id="@+id/detailEPIFragment2"
+        android:name="com.akatsuki.safeguardpro.view.DetailEPIFragment"
+        android:label="fragment_detail_e_p_i"
+        tools:layout="@layout/fragment_detail_e_p_i" />
+    <fragment
+        android:id="@+id/detailFuncionarioFragment2"
+        android:name="com.akatsuki.safeguardpro.view.DetailFuncionarioFragment"
+        android:label="fragment_detail_funcionario"
+        tools:layout="@layout/fragment_detail_funcionario" />
 </navigation>
