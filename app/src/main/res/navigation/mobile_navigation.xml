@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.akatsuki.safeguardpro.view.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="" />
     <fragment
         android:id="@+id/cadastroEpiFragment"
         android:name="com.akatsuki.safeguardpro.view.CadastroEpiFragment"
@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/telaInicialFragment"
         android:name="com.akatsuki.safeguardpro.view.TelaInicialFragment"
-        android:label="fragment_tela_inicial"
+        android:label=""
         tools:layout="@layout/fragment_tela_inicial" />
     <fragment
         android:id="@+id/detailEPIFragment2"

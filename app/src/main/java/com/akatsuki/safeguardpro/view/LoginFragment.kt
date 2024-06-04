@@ -6,11 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.akatsuki.safeguardpro.R
 import com.akatsuki.safeguardpro.databinding.FragmentLoginBinding
-import com.akatsuki.safeguardpro.viewmodel.TestViewModel
 
 class LoginFragment : Fragment() {
 
@@ -29,17 +27,17 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnLogar.setOnClickListener{
-            var email = binding.edtemail.editableText.toString()
-            var senha = binding.edtsenha.editableText.toString()
+        binding.btnLogar.setOnClickListener {
+            val email = binding.edtemail.editableText.toString()
+            val senha = binding.edtsenha.editableText.toString()
 
-            if(email != "" && senha != ""){
+            if (email != "" && senha != "") {
                 findNavController().navigate(R.id.telaInicialFuncionarioFragment)
-            } else{
+            } else {
                 AlertDialog.Builder(requireContext())
                     .setTitle("Dados Inválidos")
-                    .setMessage("Digite seu email e senha")
-                    .setPositiveButton( "Ok"){_,_ ->
+                    .setMessage("Digite seu email e sua senha")
+                    .setPositiveButton("Ok") { _, _ ->
 
                     }
                     .show()
