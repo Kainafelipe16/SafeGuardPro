@@ -18,27 +18,32 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.akatsuki.safeguardpro.view.LoginFragment"
-        android:label="" />
+        android:label=""
+        tools:layout="@layout/fragment_login"/>
     <fragment
         android:id="@+id/cadastroEpiFragment"
         android:name="com.akatsuki.safeguardpro.view.CadastroEpiFragment"
-        android:label="CadastroEpiFragment" />
+        android:label="CadastroEpiFragment"
+        tools:layout="@layout/fragment_cadastro_epi"/>
     <fragment
         android:id="@+id/relatorioEpiFragment"
         android:name="com.akatsuki.safeguardpro.view.RelatorioEpiFragment"
-        android:label="RelatorioEpiFragment" />
+        android:label="RelatorioEpiFragment"
+        tools:layout="@layout/fragment_relatorio_epi"/>
     <fragment
         android:id="@+id/relatorioFuncionarioFragment"
         android:name="com.akatsuki.safeguardpro.view.RelatorioFuncionarioFragment"
-        android:label="RelatorioFuncionarioFragment" />
+        android:label="RelatorioFuncionarioFragment"
+        tools:layout="@layout/fragment_relatorio_funcionario"/>
     <fragment
         android:id="@+id/telaInicialFuncionarioFragment"
         android:name="com.akatsuki.safeguardpro.view.TelaInicialSupervisorFragment"
-        android:label="TelaInicialFuncionarioFragment" />
+        android:label="TelaInicialFuncionarioFragment"
+        tools:layout="@layout/fragment_tela_inicial_supervisor"/>
     <fragment
         android:id="@+id/cadastroFuncionarioFragment"
         android:name="com.akatsuki.safeguardpro.view.CadastroFuncionarioFragment"
-        android:label="fragment_cadastro_funcionario"
+        android:label=""
         tools:layout="@layout/fragment_cadastro_funcionario" />
     <fragment
         android:id="@+id/telaInicialFragment"

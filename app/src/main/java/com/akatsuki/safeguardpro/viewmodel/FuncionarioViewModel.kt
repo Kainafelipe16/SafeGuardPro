@@ -11,32 +11,87 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class FuncionarioViewModel(application: Application) : AndroidViewModel(application) {
-    private val repository = FuncionarioRepository()
+    private val repository = FuncionarioRepository(application)
+
+    private val mCreatedFuncionario = MutableLiveData<Funcionario>()
+
+    val createfuncionario: LiveData<Funcionario> = mCreatedFuncionario
+
+    private val mErro = MutableLiveData<String>()
+
+    val erro: LiveData<String> = mErro
+
+    private val mFuncionarioList = MutableLiveData<List<Funcionario>>()
+
+    val funcionarioList: LiveData<List<Funcionario>> = mFuncionarioList
+
+    private val mDeletedFuncionario = MutableLiveData<Boolean>()
+
+    val deletedFuncionario: LiveData<Boolean> = mDeletedFuncionario
+
+    private val mUpdatedPessoa = MutableLiveData<Funcionario>()
+
+    val updatedFuncionario: LiveData<Funcionario> = mUpdatedPessoa
+
 
     private val mFuncionario = MutableLiveData<Funcionario>()
+
     val funcionario: LiveData<Funcionario> = mFuncionario
-
-    fun insert(funcionario: Funcionario) {
-        viewModelScope.launch(Dispatchers.IO) {
-//            repository.insertFuncionario(funcionario)
-        }
-    }
-
-    fun getFuncionario(id: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
-//            mFuncionario.postValue(repository.getFuncionario(id))
-        }
-    }
 
     fun update(funcionario: Funcionario) {
         viewModelScope.launch(Dispatchers.IO) {
-//            repository.update(funcionario)
+            try {
+                val updatedFuncionario = repository.updateFuncionario(funcionario.id, funcionario)
+                mUpdatedPessoa.postValue(updatedFuncionario)
+            } catch (e: Exception) {
+                mErro.postValue(e.message)
+            }
         }
     }
 
     fun delete(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-//            repository.delete(id)
+            try {
+                mDeletedFuncionario.postValue(repository.deleteFuncionario(id))
+            } catch (e: Exception) {
+                mErro.postValue(e.message)
+            }
+        }
+    }
+
+    fun load() {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+               mFuncionarioList.postValue(repository.getFuncionarios())
+            } catch (e: Exception) {
+                mErro.postValue(e.message)
+
+            }
+        }
+    }
+
+    fun insert(funcionario: Funcionario) {
+
+        viewModelScope.launch(Dispatchers.IO) {
+
+            try {
+                val createdPessoa = repository.insertFuncionario(funcionario)
+                mCreatedFuncionario.postValue(createdPessoa)
+            } catch (e: Exception) {
+                mErro.postValue(e.message)
+            }
+        }
+    }
+
+    fun getFuncionario(id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                mCreatedFuncionario.postValue(repository.getFuncionario(id))
+            } catch (e: Exception) {
+                mErro.postValue(e.message)
+            }
         }
     }
 }
+
+

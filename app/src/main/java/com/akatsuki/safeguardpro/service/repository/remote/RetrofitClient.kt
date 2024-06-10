@@ -1,4 +1,4 @@
-package com.akatsuki.safeguardpro.service.repository.remote
+package com.rafael.firstapp.service.repository.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,11 +12,12 @@ class RetrofitClient private constructor() {
         private fun getRetrofitInstance(): Retrofit {
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
+
             val httpClient = OkHttpClient.Builder().addInterceptor(logging).build()
 
             if (!::retrofit.isInitialized) {
                 retrofit = Retrofit.Builder()
-                    .baseUrl("https://api-com-banco-modelo.vercel.app/")
+                    .baseUrl(("https://api-com-banco-modelo.vercel.app/"))
                     .client(httpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
