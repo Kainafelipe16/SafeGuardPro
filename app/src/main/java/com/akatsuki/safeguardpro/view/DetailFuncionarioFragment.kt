@@ -16,22 +16,22 @@ class DetailFuncionarioFragment : Fragment() {
 
 
     //Criar o binding
-    private var _binding : FragmentDetailFuncionarioBinding? = null
-    private val binding : FragmentDetailFuncionarioBinding get()= _binding!!
+    private var _binding: FragmentDetailFuncionarioBinding? = null
+    private val binding: FragmentDetailFuncionarioBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Configurar binding
+        // configurar binding
         _binding = FragmentDetailFuncionarioBinding.inflate(inflater, container, false)
         return binding.root
 
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-
+        // navegar para a tela de cadastro de pessoa
+//       binding. .setOnClickListener {
+//            findNavController().navigate(R.id.detailFuncionarioFragment2)
+//        }
     }
 
 }
