@@ -6,91 +6,84 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imglogo"
+        android:id="@+id/imgLogo"
         android:layout_width="225dp"
-        android:layout_height="178dp"
+        android:layout_height="170dp"
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mask_group_removebg_preview" />
 
-    <ImageView
-        android:id="@+id/imgpreto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:scaleType="fitStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imglogo"
-        app:srcCompat="@drawable/tela" />
-
-    <TextView
-        android:id="@+id/tventrega"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Entrega"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgpreto" />
-
-    <Button
-        android:id="@+id/btnEntregar"
-        android:layout_width="244dp"
-        android:layout_height="59dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="#120F0F"
-        android:text="Entregar"
-        android:textSize="23sp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_gradient"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/imgLogo">
 
-    <EditText
-        android:id="@+id/edtfuncionario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="14"
-        android:hint="ID Funcionário"
-        android:textSize="15sp"
-        android:textColor="@color/white"
-        android:layout_marginTop="70dp"
-        android:inputType="text"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tventrega" />
+        <TextView
+            android:id="@+id/tvEntrega"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entrega"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
-    <EditText
-        android:id="@+id/edtEPI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="14"
-        android:hint="EPI"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:layout_marginTop="70dp"
-        android:inputType="text"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtfuncionario" />
+        <Button
+            android:id="@+id/btnEntregar"
+            android:layout_width="244dp"
+            android:layout_height="59dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="#120F0F"
+            android:text="Entregar"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgflesha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        <EditText
+            android:id="@+id/edtfuncionario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="14"
+            android:hint="ID Funcionário"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="70dp"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEntrega" />
+
+        <EditText
+            android:id="@+id/edtEPI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="14"
+            android:hint="EPI"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="70dp"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtfuncionario" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

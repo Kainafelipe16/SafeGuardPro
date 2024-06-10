@@ -9,15 +9,15 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akatsuki.safeguardpro.R
-import com.akatsuki.safeguardpro.databinding.FragmentDetailFuncionarioBinding
 import com.akatsuki.safeguardpro.databinding.FragmentRelatorioEpiBinding
-import com.akatsuki.safeguardpro.databinding.FragmentRelatorioFuncionarioBinding
+import com.akatsuki.safeguardpro.view.adapter.EpiAdapter
 import com.akatsuki.safeguardpro.view.adapter.FuncionarioAdapter
-import com.akatsuki.safeguardpro.viewmodel.RelatorioFuncionarioViewModel
+import com.akatsuki.safeguardpro.viewmodel.EpiViewModel
+import com.akatsuki.safeguardpro.viewmodel.FuncionarioViewModel
 
 class RelatorioEpiFragment : Fragment() {
-    private val viewModel: RelatorioFuncionarioViewModel by viewModels()
-    private lateinit var adapter: FuncionarioAdapter
+    private val viewModel: EpiViewModel by viewModels()
+    private lateinit var adapter: EpiAdapter
 
     //Criar o binding
     private var _binding : FragmentRelatorioEpiBinding? = null
@@ -36,10 +36,8 @@ class RelatorioEpiFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Quando clicar em algum item da lista
-        adapter = FuncionarioAdapter(viewModel.funcionarioList.value) { funcionario ->
-
+        adapter = EpiAdapter(viewModel.epiList.value) { epi ->
             findNavController().navigate(R.id.detailEPIFragment2, arguments)
-
         }
 
         //Configura a recycler
@@ -47,8 +45,8 @@ class RelatorioEpiFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(requireContext())
         recycler.adapter = adapter
 
-        viewModel.funcionarioList.observe(viewLifecycleOwner) {
-            adapter.updateFuncionarios(it)
+        viewModel.epiList.observe(viewLifecycleOwner) {
+            adapter.updateEpi(it)
         }
 
         //Navegar para a tela de cadastro de pessoa

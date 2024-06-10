@@ -7,122 +7,115 @@
     tools:context=".view.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgLogo"
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_removebg_preview"
-        android:contentDescription="Logo da página" />
+        app:srcCompat="@drawable/logo_removebg_preview"/>
 
-    <ImageView
-        android:id="@+id/imgTela"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/rectangle_5__6_"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="Tela da página" />
-
-    <TextView
-        android:id="@+id/tvCadastroEpi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cadastro EPI"
-        android:textColor="@color/white"
-        android:textSize="27sp"
-        android:textStyle="bold"
-        android:layout_marginTop="160dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/edtNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
-        android:ems="13"
-        android:hint="Nome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:inputType="text"
-        android:textColorHint="@color/white"
-
-        />
-
-    <EditText
-        android:id="@+id/edtDataValidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="13"
-        android:hint="Validade"
-        android:textColorHint="@color/white"
-        android:layout_marginTop="300dp"
-        android:inputType="text|date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-    <EditText
-        android:id="@+id/edtCA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="13"
-        android:hint="Certicado de aprovação"
-        android:textColorHint="@color/white"
-        android:layout_marginTop="380dp"
-        android:inputType="text|date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-    <EditText
-        android:id="@+id/edtDescricao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="13"
-        android:hint="Descrição"
-        android:textColorHint="@color/white"
-        android:layout_marginTop="460dp"
-        android:inputType="text|date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <EditText
-        android:id="@+id/edtOrientação"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="13"
-        android:hint="Orientação"
-        android:textColorHint="@color/white"
-        android:layout_marginTop="540dp"
-        android:inputType="text|date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
-
-    <Button
-        android:id="@+id/btnCadastrar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cadastrar"
-        android:backgroundTint="#120F0F"
-        android:layout_marginHorizontal="30dp"
-        android:textSize="23sp"
-        android:layout_marginBottom="60dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_gradient"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/imgLogo">
 
+
+        <TextView
+            android:id="@+id/tvCadastroEpi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastro EPI"
+            android:textColor="@color/white"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edtNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="13"
+            android:hint="Nome"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCadastroEpi" />
+
+        <EditText
+            android:id="@+id/edtDataValidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="13"
+            android:hint="Validade"
+            android:inputType="text|date"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+
+        <EditText
+            android:id="@+id/edtCa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="13"
+            android:hint="Certicado de aprovação"
+            android:inputType="text|date"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtDataValidade" />
+
+        <EditText
+            android:id="@+id/edtDescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="13"
+            android:hint="Descrição"
+            android:inputType="text|date"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCa" />
+
+        <EditText
+            android:id="@+id/edtOrientação"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="13"
+            android:hint="Orientação"
+            android:inputType="text|date"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtDescricao" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:backgroundTint="#120F0F"
+            android:text="Cadastrar"
+            android:textSize="23sp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtOrientação" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

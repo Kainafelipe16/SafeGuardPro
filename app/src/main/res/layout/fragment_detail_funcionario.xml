@@ -6,132 +6,126 @@
     android:layout_height="match_parent"
     tools:context=".view.DetailFuncionarioFragment">
 
-
-    <ImageView
-        android:id="@+id/imgTelaFuncionarioDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="Tela de detalhes do funcionário"
-        android:src="@drawable/rectangle_5__6_"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/ic_user1"
-        app:tint="#fff"
-        android:layout_marginTop="70dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgTelaFuncionarioDetail"
-        android:contentDescription="Imagem do funcionário" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_gradient"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_user1"
+            app:tint="@color/white"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="Imagem do funcionário" />
 
 
-    <TextView
-        android:id="@+id/lblNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Nome: "
-        android:layout_marginTop="50dp"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11"/>
+        <TextView
+            android:id="@+id/lblNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Nome: "
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgIcon" />
 
-    <TextView
-        android:id="@+id/tvNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="Vinicius"
-        android:layout_marginTop="11dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/lblNome"
-        app:layout_constraintStart_toEndOf="@+id/lblNome"
-        app:layout_constraintTop_toTopOf="@+id/lblNome" />
+        <TextView
+            android:id="@+id/tvNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Vinicius"
+            android:layout_marginTop="11dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/lblNome"
+            app:layout_constraintStart_toEndOf="@+id/lblNome"
+            app:layout_constraintTop_toTopOf="@+id/lblNome" />
 
 
-    <TextView
-        android:id="@+id/lblEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email: "
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblNome" />
+        <TextView
+            android:id="@+id/lblEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: "
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblNome" />
 
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="vinicius123gmail.com"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/lblEmail"
-        app:layout_constraintStart_toEndOf="@+id/lblEmail"
-        app:layout_constraintTop_toTopOf="@+id/lblEmail" />
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vinicius123gmail.com"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/lblEmail"
+            app:layout_constraintStart_toEndOf="@+id/lblEmail"
+            app:layout_constraintTop_toTopOf="@+id/lblEmail" />
 
-    <TextView
-        android:id="@+id/lblCPF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:text="CPF: "
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
+        <TextView
+            android:id="@+id/lblCPF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="CPF: "
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
 
-    <TextView
-        android:id="@+id/tvCPF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12345678-90"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/lblCPF"
-        app:layout_constraintStart_toEndOf="@+id/lblCPF"
-        app:layout_constraintTop_toTopOf="@+id/lblCPF" />
+        <TextView
+            android:id="@+id/tvCPF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12345678-90"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/lblCPF"
+            app:layout_constraintStart_toEndOf="@+id/lblCPF"
+            app:layout_constraintTop_toTopOf="@+id/lblCPF" />
 
-    <TextView
-        android:id="@+id/lblTelefone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Telefone: "
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblCPF" />
+        <TextView
+            android:id="@+id/lblTelefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefone: "
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblCPF" />
 
-    <TextView
-        android:id="@+id/tvTelefone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="99100-0000"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/lblTelefone"
-        app:layout_constraintStart_toEndOf="@+id/lblTelefone"
-        app:layout_constraintTop_toTopOf="@+id/lblTelefone" />
-
+        <TextView
+            android:id="@+id/tvTelefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99100-0000"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/lblTelefone"
+            app:layout_constraintStart_toEndOf="@+id/lblTelefone"
+            app:layout_constraintTop_toTopOf="@+id/lblTelefone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

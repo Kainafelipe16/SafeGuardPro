@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 
 class FuncionarioViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = FuncionarioRepository()
+
     private val mFuncionario = MutableLiveData<Funcionario>()
     val funcionario: LiveData<Funcionario> = mFuncionario
 

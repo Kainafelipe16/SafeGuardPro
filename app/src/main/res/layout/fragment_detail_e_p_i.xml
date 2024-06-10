@@ -6,31 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".view.DetailEPIFragment">
 
-    <ImageView
-        android:id="@+id/imgTelaEpiDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:src="@drawable/rectangle_5__3_"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_gradient"
+        android:orientation="vertical"
+        >
     <TextView
         android:id="@+id/tvTituloEpi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Detalhes EPI"
-        android:layout_marginTop="60dp"
         android:textSize="40sp"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgTelaEpiDetail" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/lblNomeDetailEpi"
@@ -43,7 +37,7 @@
         android:layout_marginTop="120dp"
         android:layout_marginStart="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloEpi" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloEpi"/>
 
     <TextView
         android:id="@+id/tvNomeDetailEpi"
@@ -55,7 +49,7 @@
         android:layout_marginStart="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/lblNomeDetailEpi"
         app:layout_constraintStart_toEndOf="@+id/lblNomeDetailEpi"
-        app:layout_constraintTop_toTopOf="@+id/lblNomeDetailEpi" />
+        app:layout_constraintTop_toTopOf="@+id/lblNomeDetailEpi"/>
 
     <TextView
         android:id="@+id/lblValidadeDetailEpi"
@@ -68,7 +62,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="37dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblNomeDetailEpi" />
+        app:layout_constraintTop_toBottomOf="@+id/lblNomeDetailEpi"/>
 
     <TextView
         android:id="@+id/tvValidadeDetailEpi"
@@ -80,7 +74,7 @@
         android:layout_marginStart="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/lblValidadeDetailEpi"
         app:layout_constraintStart_toEndOf="@+id/lblValidadeDetailEpi"
-        app:layout_constraintTop_toTopOf="@+id/lblValidadeDetailEpi" />
+        app:layout_constraintTop_toTopOf="@+id/lblValidadeDetailEpi"/>
 
     <TextView
         android:id="@+id/lblCertificadoDetailEpi"
@@ -93,7 +87,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="37dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblValidadeDetailEpi" />
+        app:layout_constraintTop_toBottomOf="@+id/lblValidadeDetailEpi"/>
 
     <TextView
         android:id="@+id/tvCertificadoDetailEpi"
@@ -105,7 +99,7 @@
         android:layout_marginStart="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/lblCertificadoDetailEpi"
         app:layout_constraintStart_toEndOf="@+id/lblCertificadoDetailEpi"
-        app:layout_constraintTop_toTopOf="@+id/lblCertificadoDetailEpi" />
+        app:layout_constraintTop_toTopOf="@+id/lblCertificadoDetailEpi"/>
 
     <TextView
         android:id="@+id/lblDescricaoDetailEpi"
@@ -118,7 +112,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblCertificadoDetailEpi" />
+        app:layout_constraintTop_toBottomOf="@+id/lblCertificadoDetailEpi"/>
 
     <TextView
         android:id="@+id/tvDescricaoDetailEpi"
@@ -158,4 +152,5 @@
         app:layout_constraintTop_toTopOf="@+id/lblOrientacaoDetailEpi" />
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

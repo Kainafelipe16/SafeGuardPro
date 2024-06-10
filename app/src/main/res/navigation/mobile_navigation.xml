@@ -12,7 +12,7 @@
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/entregaEpiFragment"
-        android:name="com.akatsuki.safeguardpro.view.EntregaEpiFragment"
+        android:name="com.akatsuki.safeguardpro.view.EmprestimoFragment"
         android:label="EntregaEpiFragment"
         tools:layout="@layout/fragment_entrega_epi"/>
     <fragment
