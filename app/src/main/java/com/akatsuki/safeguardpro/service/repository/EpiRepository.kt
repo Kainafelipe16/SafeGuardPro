@@ -15,6 +15,7 @@ class EpiRepository(context: Context) {
     suspend fun getEpis(): List<Epi> {
         return mRemote.getEpis()
     }
+
     suspend fun getEpi(id: Int): Epi {
         val response = mRemote.getEpiById(id)
         return if (response.isSuccessful) {

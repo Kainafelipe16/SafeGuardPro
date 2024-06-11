@@ -1,10 +1,12 @@
 package com.akatsuki.safeguardpro.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +29,7 @@ class RelatorioEpiFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentRelatorioEpiBinding.inflate(inflater, container, false)
         return binding.root
@@ -37,6 +39,9 @@ class RelatorioEpiFragment : Fragment() {
 
         //Quando clicar em algum item da lista
         adapter = EpiAdapter(viewModel.epiList.value) { epi ->
+            val epiBundle = Bundle()
+            epiBundle.putInt("epiId", epi.id)
+            arguments = epiBundle
             findNavController().navigate(R.id.detailEPIFragment2, arguments)
         }
 
@@ -47,6 +52,11 @@ class RelatorioEpiFragment : Fragment() {
 
         viewModel.epiList.observe(viewLifecycleOwner) {
             adapter.updateEpi(it)
+        }
+
+        viewModel.erro.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Erro EPI: $it", Toast.LENGTH_LONG).show()
+            Log.e("erro epi", it)
         }
 
         //Navegar para a tela de cadastro de pessoa

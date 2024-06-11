@@ -16,7 +16,7 @@ class RetrofitClient private constructor() {
 
             if (!::retrofit.isInitialized) {
                 retrofit = Retrofit.Builder()
-                    .baseUrl("https://api-com-banco-modelo.vercel.app/")
+                    .baseUrl("")
                     .client(httpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
