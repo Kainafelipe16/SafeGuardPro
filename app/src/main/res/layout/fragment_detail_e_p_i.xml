@@ -127,7 +127,7 @@
         app:layout_constraintTop_toTopOf="@+id/lblDescricaoDetailEpi" />
 
     <TextView
-        android:id="@+id/lblOrientacaoDetailEpi"
+        android:id="@+id/lblOrientaçãoDetailEpi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Orientação: "
@@ -147,9 +147,9 @@
         android:textColor="@color/white"
         android:textSize="23sp"
         android:layout_marginStart="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/lblOrientacaoDetailEpi"
-        app:layout_constraintStart_toEndOf="@+id/lblOrientacaoDetailEpi"
-        app:layout_constraintTop_toTopOf="@+id/lblOrientacaoDetailEpi" />
+        app:layout_constraintBottom_toBottomOf="@+id/lblOrientaçãoDetailEpi"
+        app:layout_constraintStart_toEndOf="@+id/lblOrientaçãoDetailEpi"
+        app:layout_constraintTop_toTopOf="@+id/lblOrientaçãoDetailEpi" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,12 +26,6 @@ class DetailFuncionarioFragment : Fragment() {
         // configurar binding
         _binding = FragmentDetailFuncionarioBinding.inflate(inflater, container, false)
         return binding.root
-
-
-        // navegar para a tela de cadastro de pessoa
-//       binding. .setOnClickListener {
-//            findNavController().navigate(R.id.detailFuncionarioFragment2)
-//        }
     }
 
 }

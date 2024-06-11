@@ -1,6 +1,7 @@
 package com.akatsuki.safeguardpro.view.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.view.ViewParent
 import androidx.recyclerview.widget.RecyclerView
@@ -20,8 +21,11 @@ class FuncionarioAdapter(
 
     class FuncionarioViewHolder(private val binding: ListItemFuncionarioBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(funcionario: Funcionario, clickListener: (Funcionario) -> Unit) {
-            //setar informações
+            binding.edtNome.text = funcionario.nome
+//            binding.tvSobrenome.text = funcionario.sobrenome.toString()
+//            binding.tvCpf.text = funcionario.cpf
         }
     }
 
@@ -35,7 +39,7 @@ class FuncionarioAdapter(
         return FuncionarioViewHolder(listItemFuncionarioBinding)
     }
 
-    override fun onBindViewHolder(holder: FuncionarioViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FuncionarioAdapter.FuncionarioViewHolder, position: Int) {
         holder.bind(funcionarioList[position], clickListener)
     }
 
@@ -48,3 +52,5 @@ class FuncionarioAdapter(
         notifyDataSetChanged()
     }
 }
+
+
