@@ -15,6 +15,7 @@ interface EpiService {
 
     @GET("get_epis")
     suspend fun getEpis(): List<Epi>
+
     @Multipart
     @POST("addEpi")
     suspend fun createEpi(
@@ -27,6 +28,7 @@ interface EpiService {
 
     @GET("listarEpi/{epi_id")
     suspend fun getEpiById(@Path("epi_id") id: Int): Response<List<Epi>>
+
     @Multipart
     @PUT("updateEpi/{epi_id}")
     suspend fun updateEpi(

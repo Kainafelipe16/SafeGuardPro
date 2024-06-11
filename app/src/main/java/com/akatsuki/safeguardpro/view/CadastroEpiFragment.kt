@@ -12,16 +12,18 @@ import com.akatsuki.safeguardpro.databinding.FragmentCadastroEpiBinding
 import com.akatsuki.safeguardpro.databinding.FragmentCadastroFuncionarioBinding
 import com.akatsuki.safeguardpro.service.model.Epi
 import com.akatsuki.safeguardpro.viewmodel.EpiViewModel
+import okhttp3.internal.notifyAll
 
 class CadastroEpiFragment : Fragment() {
     private val viewModel: EpiViewModel by viewModels()
 
     private var _binding: FragmentCadastroEpiBinding? = null
     private val binding: FragmentCadastroEpiBinding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentCadastroEpiBinding.inflate(inflater, container, false)
         return binding.root
@@ -53,12 +55,28 @@ class CadastroEpiFragment : Fragment() {
 //                viewModel.insert(epi)
 //            }
 
-            viewModel.updatedEpi.observe(viewLifecycleOwner) {
-                findNavController().navigateUp()
-            }
+        viewModel.updatedEpi.observe(viewLifecycleOwner) {
+            findNavController().navigateUp()
+        }
 
-            viewModel.deletedEpi.observe(viewLifecycleOwner) {
-                findNavController().navigateUp()
-            }
+        viewModel.deletedEpi.observe(viewLifecycleOwner) {
+            findNavController().navigateUp()
+        }
+
+        viewModel.epi.observe(viewLifecycleOwner) {
+//            binding.edtNomeEpi.visibility = View.VISIBLE
+//            binding.edtDescricao.visibility = View.VISIBLE
+//            binding.edtCa.visibility = View.VISIBLE
+//            binding.edtValidadeFabricacao.visibility = View.VISIBLE
+//            binding.edtValidadeTempoUso.visibility = View.VISIBLE
+
+//            binding.edtNomeEpi.setText(it.nomeEpi)
+//            binding.edtDescricao.setText(it.descricao)
+//            binding.edtcA.setText(it.cA)
+//            binding.edtValidadeFabricacao.setText(it.validadeFabricacao)
+//            binding.edtValidadeTempoUso.setText(it.validadeTempoUso)
+
+
         }
     }
+}
