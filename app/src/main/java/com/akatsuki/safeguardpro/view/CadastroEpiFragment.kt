@@ -34,49 +34,44 @@ class CadastroEpiFragment : Fragment() {
         arguments?.let {
             viewModel.getEpi(it.getInt("epiId"))
         }
-//        binding.btnCadastrar.setOnClickListener {
-//            var nomeEpi = binding.edtNomeEpi.editableText.toString()
-//            var descricao = binding.edtDescricao.editableText.toString()
-//            var cA = binding.edtCa.editableText.toString()
-//            var validadeFabricacao = binding.edtValidadeFabricacao.editableText.toString()
-//            var validadeTempoUso = binding.edtValidadeTempoUso.editableText.toString()
-//
-//            val epi = Epi(
-//                nomeEpi = nomeEpi,
-//                descricao = descricao,
-//                cA = cA,
-//                validadeFabricacao = validadeFabricacao,
-//                validadeTempoUso = validadeTempoUso
-//            )
-//            viewModel.epi.value?.let {
-//                epi.id = it.id
-//                viewModel.update(epi)
-//            } ?: run {
-//                viewModel.insert(epi)
-//            }
+        binding.btnCadastrar.setOnClickListener {
+            var nomeEpi = binding.edtNomeEpi.editableText.toString()
+            var descricao = binding.edtDescricao.editableText.toString()
+            var Ca = binding.edtCa.editableText.toString()
+            var validadeFabricacao = binding.edtValidadeFabricacao.editableText.toString()
+            var validadeTempoUso = binding.edtValidadeTempoUso.editableText.toString()
 
-        viewModel.updatedEpi.observe(viewLifecycleOwner) {
-            findNavController().navigateUp()
-        }
+            val epi = Epi(
+                nomeEpi = nomeEpi,
+                descricao = descricao,
+                Ca = Ca,
+                validadeFabricacao = validadeFabricacao,
+                validadeTempoUso = validadeTempoUso
+            )
+            viewModel.epi.value?.let {
+                epi.id = it.id
+                viewModel.update(epi)
+            } ?: run {
+                viewModel.insert(epi)
+            }
 
-        viewModel.deletedEpi.observe(viewLifecycleOwner) {
-            findNavController().navigateUp()
-        }
+            viewModel.deletedEpi.observe(viewLifecycleOwner) {
+                findNavController().navigateUp()
+            }
 
-        viewModel.epi.observe(viewLifecycleOwner) {
-//            binding.edtNomeEpi.visibility = View.VISIBLE
-//            binding.edtDescricao.visibility = View.VISIBLE
-//            binding.edtCa.visibility = View.VISIBLE
-//            binding.edtValidadeFabricacao.visibility = View.VISIBLE
-//            binding.edtValidadeTempoUso.visibility = View.VISIBLE
+            viewModel.epi.observe(viewLifecycleOwner) {
+                binding.edtNomeEpi.visibility = View.VISIBLE
+                binding.edtDescricao.visibility = View.VISIBLE
+                binding.edtCa.visibility = View.VISIBLE
+                binding.edtValidadeFabricacao.visibility = View.VISIBLE
+                binding.edtValidadeTempoUso.visibility = View.VISIBLE
 
-//            binding.edtNomeEpi.setText(it.nomeEpi)
-//            binding.edtDescricao.setText(it.descricao)
-//            binding.edtcA.setText(it.cA)
-//            binding.edtValidadeFabricacao.setText(it.validadeFabricacao)
-//            binding.edtValidadeTempoUso.setText(it.validadeTempoUso)
-
-
+                binding.edtNomeEpi.setText(it.nomeEpi)
+                binding.edtDescricao.setText(it.descricao)
+                binding.edtCa.setText(it.Ca)
+                binding.edtValidadeFabricacao.setText(it.validadeFabricacao)
+                binding.edtValidadeTempoUso.setText(it.validadeTempoUso)
+            }
         }
     }
 }

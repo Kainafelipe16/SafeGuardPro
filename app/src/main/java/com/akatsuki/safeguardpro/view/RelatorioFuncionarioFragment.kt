@@ -40,7 +40,7 @@ class RelatorioFuncionarioFragment : Fragment() {
             val funcionarioBundle = Bundle()
             funcionarioBundle.putInt("funcionarioId", funcionario.id)
             arguments = funcionarioBundle
-            findNavController().navigate(R.id.detailFuncionarioFragment2, arguments)
+            findNavController().navigate(R.id.detailFuncionarioFragment, arguments)
 
         }
 

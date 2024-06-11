@@ -13,15 +13,17 @@ import retrofit2.http.Path
 
 interface FuncionarioService {
 
-    @GET("getFuncionarios")
+    @GET("listarFuncionario")
     suspend fun getFuncionarios(): List<Funcionario>
 
-    @GET("listarFuncionario/{funcionario_id}")
+    @GET("selectFuncionario/{funcionario_id}")
     suspend fun getFuncionarioId(@Path("funcionario_id") id: Int): Response<List<Funcionario>>
+
+    @GET("selectFuncionarioCPF/{cpf}")
+    suspend fun getFuncionarioByCpf(@Path("cpf") cpf: String): Response<List<Funcionario>>
 
     @GET("deleteFuncionario/{funcionario_id}")
     suspend fun deleteFuncionarioById(@Path("funcionario_id") id: Int): Response<List<Funcionario>>
-
 
     @Multipart
     @POST("addFuncionario")

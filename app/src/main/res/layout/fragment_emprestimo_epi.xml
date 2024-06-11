@@ -7,46 +7,59 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/tvLogin"
+        android:id="@+id/tvAtribuirEpi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="LOGIN"
+        android:text="ATRIBUIR EPI"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtCpfFuncionario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLogin"
+        app:layout_constraintTop_toBottomOf="@id/tvAtribuirEpi"
         android:layout_marginTop="145dp"
         android:layout_marginHorizontal="60dp"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
+        android:hint="CPF do funcionário: "
+        android:inputType="number"
         android:textColorHint="@color/white" />
 
     <EditText
-        android:id="@+id/edtSenha"
+        android:id="@+id/edtCaEpi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtEmail"
+        app:layout_constraintTop_toBottomOf="@id/edtCpfFuncionario"
         android:layout_marginTop="35dp"
         android:layout_marginHorizontal="60dp"
-        android:hint="Senha"
-        android:inputType="textPassword"
+        android:hint="CA da Epi: "
+        android:inputType="number"
         android:textColorHint="@color/white" />
 
     <Button
-        android:id="@+id/btnLogar"
+        android:id="@+id/btnDeletarEmprestimo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnAtribuirEpi"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="60dp"
+        android:backgroundTint="#120F0F"
+        android:text="Deletar Empréstimo"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btnAtribuirEpi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,4 +71,4 @@
         android:text="Cadastrar"
         android:textSize="25sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,28 +14,21 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     private val repository = FuncionarioRepository(application)
 
     private val mCreatedFuncionario = MutableLiveData<Funcionario>()
-
     val createfuncionario: LiveData<Funcionario> = mCreatedFuncionario
 
     private val mErro = MutableLiveData<String>()
-
     val erro: LiveData<String> = mErro
 
     private val mFuncionarioList = MutableLiveData<List<Funcionario>>()
-
     val funcionarioList: LiveData<List<Funcionario>> = mFuncionarioList
 
     private val mDeletedFuncionario = MutableLiveData<Boolean>()
-
     val deletedFuncionario: LiveData<Boolean> = mDeletedFuncionario
 
     private val mUpdatedPessoa = MutableLiveData<Funcionario>()
-
     val updatedFuncionario: LiveData<Funcionario> = mUpdatedPessoa
 
-
     private val mFuncionario = MutableLiveData<Funcionario>()
-
     val funcionario: LiveData<Funcionario> = mFuncionario
 
     fun update(funcionario: Funcionario) {
@@ -49,7 +42,7 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    fun delete(id: Int) {
+    fun deleteFuncionario(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 mDeletedFuncionario.postValue(repository.deleteFuncionario(id))
@@ -62,7 +55,7 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     fun load() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-               mFuncionarioList.postValue(repository.getFuncionarios())
+                mFuncionarioList.postValue(repository.getFuncionarios())
             } catch (e: Exception) {
                 mErro.postValue(e.message)
             }
@@ -72,7 +65,6 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     fun insert(funcionario: Funcionario) {
 
         viewModelScope.launch(Dispatchers.IO) {
-
             try {
                 val createdPessoa = repository.insertFuncionario(funcionario)
                 mCreatedFuncionario.postValue(createdPessoa)
@@ -86,6 +78,16 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 mCreatedFuncionario.postValue(repository.getFuncionario(id))
+            } catch (e: Exception) {
+                mErro.postValue(e.message)
+            }
+        }
+    }
+
+    fun getFuncionarioByCpf(cpf: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                mCreatedFuncionario.postValue(repository.getFuncionarioByCpf(cpf))
             } catch (e: Exception) {
                 mErro.postValue(e.message)
             }

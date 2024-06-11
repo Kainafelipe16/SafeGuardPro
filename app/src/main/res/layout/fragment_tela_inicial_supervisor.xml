@@ -1,51 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/shape_gradient">
-
-        <ImageView
-            android:id="@+id/imgLogo"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/projeto_login"
-            tools:ignore="MissingConstraints" />
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_gradient"
+    android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewUser"
+            android:id="@+id/cvUser"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="200dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgLogo">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="60dp"
+            app:cardCornerRadius="200dp" >
 
             <ImageView
-                android:id="@+id/imageView15"
+                android:id="@+id/imgUser"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/user"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewNome"
-            android:layout_width="290dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/black"
-            app:cardCornerRadius="200dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/cvNome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewUser" >
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvUser"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginTop="65dp"
+            android:backgroundTint="@color/black"
+            app:cardCornerRadius="200dp" >
 
             <TextView
                 android:id="@+id/tvBemVindo"
@@ -59,71 +49,54 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewRf"
+            android:id="@+id/cvRelatorioFuncionario"
             android:layout_width="125dp"
             android:layout_height="87dp"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewNome">
+            app:layout_constraintTop_toBottomOf="@id/cvNome"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="20dp">
 
             <ImageView
-                android:id="@+id/imgRf"
+                android:id="@+id/imgRelatorioFuncionario"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/user" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewEpi1"
+            android:id="@+id/cvRelatorioEpi"
             android:layout_width="125dp"
             android:layout_height="87dp"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewRf">
+            app:layout_constraintTop_toBottomOf="@id/cvRelatorioFuncionario"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="20dp">
 
             <ImageView
-                android:id="@+id/imgCapacete"
+                android:id="@+id/imgRelatorioEpi"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/capacete" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewEpi2"
+            android:id="@+id/cvEmprestimo"
             android:layout_width="125dp"
             android:layout_height="87dp"
-            android:layout_marginTop="25dp"
-            app:cardCornerRadius="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewEpi1" >
-
-            <ImageView
-                android:id="@+id/imgColete"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/colete" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewEpi3"
-            android:layout_width="125dp"
-            android:layout_height="87dp"
-            android:layout_marginTop="25dp"
-            app:cardCornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardViewEpi2" >
+            app:layout_constraintTop_toBottomOf="@id/cvRelatorioEpi"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="20dp">
 
             <ImageView
-                android:id="@+id/imgBota"
+                android:id="@+id/imgEmprestimo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/bota" />
+                android:src="@drawable/epi" />
         </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>

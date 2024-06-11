@@ -4,20 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/shape_gradient"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListaFuncionario"
+        android:id="@+id/rvListaEmprestimo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:listitem="@layout/list_item_funcionario" />
+        tools:listitem="@layout/list_item_emprestimo" />
 
-    <ImageButton
-        android:id="@+id/imgBtnAdd"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="end"
-        android:contentDescription="Botão adicionar"
-        android:src="@drawable/icone_add" />
 </LinearLayout>

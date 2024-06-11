@@ -13,7 +13,7 @@ import retrofit2.http.Path
 
 interface EpiService {
 
-    @GET("get_epis")
+    @GET("listarEpi")
     suspend fun getEpis(): List<Epi>
 
     @Multipart
@@ -26,8 +26,11 @@ interface EpiService {
         @Part("validadeTempoUso") validadeTempoUso: RequestBody
     ): Response<Epi>
 
-    @GET("listarEpi/{epi_id")
+    @GET("selectEPI/{epi_id")
     suspend fun getEpiById(@Path("epi_id") id: Int): Response<List<Epi>>
+
+    @GET("selectEpiCa/{Ca")
+    suspend fun getEpiByCa(@Path("Ca") Ca: Int): Response<List<Epi>>
 
     @Multipart
     @PUT("updateEpi/{epi_id}")

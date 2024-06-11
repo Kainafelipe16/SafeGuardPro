@@ -11,11 +11,8 @@ import com.akatsuki.safeguardpro.R
 import com.akatsuki.safeguardpro.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
-
     private var _binding: FragmentLoginBinding? = null
     private val binding: FragmentLoginBinding get() = _binding!!
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,22 +25,19 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnLogar.setOnClickListener {
-            val email = binding.edtemail.editableText.toString()
-            val senha = binding.edtsenha.editableText.toString()
+            val email = binding.edtEmail.editableText.toString()
+            val senha = binding.edtSenha.editableText.toString()
 
             if (email != "" && senha != "") {
-                findNavController().navigate(R.id.telaInicialFuncionarioFragment)
+                findNavController().navigate(R.id.telaInicialSupervisorFragment)
             } else {
                 AlertDialog.Builder(requireContext())
                     .setTitle("Dados Inválidos")
                     .setMessage("Digite seu email e sua senha")
                     .setPositiveButton("Ok") { _, _ ->
-
                     }
                     .show()
             }
-
-
         }
     }
 }

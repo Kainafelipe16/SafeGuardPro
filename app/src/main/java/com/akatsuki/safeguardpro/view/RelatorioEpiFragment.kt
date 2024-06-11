@@ -42,7 +42,7 @@ class RelatorioEpiFragment : Fragment() {
             val epiBundle = Bundle()
             epiBundle.putInt("epiId", epi.id)
             arguments = epiBundle
-            findNavController().navigate(R.id.detailEPIFragment2, arguments)
+            findNavController().navigate(R.id.detailEpiFragment, arguments)
         }
 
         //Configura a recycler

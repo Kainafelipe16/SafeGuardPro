@@ -23,7 +23,7 @@ class TelaInicialSupervisorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.cardViewRf.setOnClickListener{
+        binding.cvRelatorioFuncionario.setOnClickListener{
             findNavController().navigate(R.id.relatorioFuncionarioFragment)
         }
     }

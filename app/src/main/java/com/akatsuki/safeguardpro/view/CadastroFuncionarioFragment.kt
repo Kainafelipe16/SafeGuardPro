@@ -1,6 +1,5 @@
 package com.akatsuki.safeguardpro.view
 
-import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,7 +16,6 @@ class CadastroFuncionarioFragment : Fragment() {
     private val viewModel: FuncionarioViewModel by viewModels()
 
     private var _binding: FragmentCadastroFuncionarioBinding? = null
-
     private val binding: FragmentCadastroFuncionarioBinding get() = _binding!!
 
     override fun onCreateView(
@@ -36,7 +34,7 @@ class CadastroFuncionarioFragment : Fragment() {
 
         binding.btnCadastrar.setOnClickListener {
             var nome = binding.edtNome.editableText.toString()
-            var sobrenome = binding.edtEmail.editableText.toString()
+            var sobrenome = binding.edtSobrenome.editableText.toString()
             var cpf = binding.edtCpf.editableText.toString()
 
 

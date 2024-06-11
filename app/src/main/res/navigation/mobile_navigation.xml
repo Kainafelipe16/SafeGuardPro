@@ -4,60 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/telaInicialFragment">
-
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.akatsuki.safeguardpro.view.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
-    <fragment
-        android:id="@+id/entregaEpiFragment"
-        android:name="com.akatsuki.safeguardpro.view.EmprestimoFragment"
-        android:label="EntregaEpiFragment"
-        tools:layout="@layout/fragment_entrega_epi"/>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.akatsuki.safeguardpro.view.LoginFragment"
-        android:label=""
-        tools:layout="@layout/fragment_login"/>
     <fragment
         android:id="@+id/cadastroEpiFragment"
         android:name="com.akatsuki.safeguardpro.view.CadastroEpiFragment"
-        android:label="CadastroEpiFragment"
-        tools:layout="@layout/fragment_cadastro_epi"/>
-    <fragment
-        android:id="@+id/relatorioEpiFragment"
-        android:name="com.akatsuki.safeguardpro.view.RelatorioEpiFragment"
-        android:label="RelatorioEpiFragment"
-        tools:layout="@layout/fragment_relatorio_epi"/>
-    <fragment
-        android:id="@+id/relatorioFuncionarioFragment"
-        android:name="com.akatsuki.safeguardpro.view.RelatorioFuncionarioFragment"
-        android:label="RelatorioFuncionarioFragment"
-        tools:layout="@layout/fragment_relatorio_funcionario"/>
-    <fragment
-        android:id="@+id/telaInicialFuncionarioFragment"
-        android:name="com.akatsuki.safeguardpro.view.TelaInicialSupervisorFragment"
-        android:label="TelaInicialFuncionarioFragment"
-        tools:layout="@layout/fragment_tela_inicial_supervisor"/>
+        android:label="CadastroEpiFragment" />
     <fragment
         android:id="@+id/cadastroFuncionarioFragment"
         android:name="com.akatsuki.safeguardpro.view.CadastroFuncionarioFragment"
-        android:label=""
-        tools:layout="@layout/fragment_cadastro_funcionario" />
+        android:label="CadastroFuncionarioFragment" />
+    <fragment
+        android:id="@+id/detailEpiFragment"
+        android:name="com.akatsuki.safeguardpro.view.DetailEpiFragment"
+        android:label="DetailEpiFragment" />
+    <fragment
+        android:id="@+id/detailFuncionarioFragment"
+        android:name="com.akatsuki.safeguardpro.view.DetailFuncionarioFragment"
+        android:label="DetailFuncionarioFragment" />
+    <fragment
+        android:id="@+id/emprestimoEpiFragment"
+        android:name="com.akatsuki.safeguardpro.view.EmprestimoEpiFragment"
+        android:label="EmprestimoEpiFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.akatsuki.safeguardpro.view.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/relatorioEmprestimoFragment"
+        android:name="com.akatsuki.safeguardpro.view.RelatorioEmprestimoFragment"
+        android:label="RelatorioEmprestimoFragment" />
     <fragment
         android:id="@+id/telaInicialFragment"
         android:name="com.akatsuki.safeguardpro.view.TelaInicialFragment"
-        android:label=""
-        tools:layout="@layout/fragment_tela_inicial" />
+        android:label="TelaInicialFragment" />
     <fragment
-        android:id="@+id/detailEPIFragment2"
-        android:name="com.akatsuki.safeguardpro.view.DetailEPIFragment"
-        android:label="fragment_detail_e_p_i"
-        tools:layout="@layout/fragment_detail_e_p_i" />
+        android:id="@+id/telaInicialSupervisorFragment"
+        android:name="com.akatsuki.safeguardpro.view.TelaInicialSupervisorFragment"
+        android:label="TelaInicialSupervisorFragment" />
     <fragment
-        android:id="@+id/detailFuncionarioFragment2"
-        android:name="com.akatsuki.safeguardpro.view.DetailFuncionarioFragment"
-        android:label="fragment_detail_funcionario"
-        tools:layout="@layout/fragment_detail_funcionario" />
+        android:id="@+id/relatorioFuncionarioFragment"
+        android:name="com.akatsuki.safeguardpro.view.RelatorioFuncionarioFragment"
+        android:label="RelatorioFuncionarioFragment" />
+    <fragment
+        android:id="@+id/relatorioEpiFragment"
+        android:name="com.akatsuki.safeguardpro.view.RelatorioEpiFragment"
+        android:label="RelatorioEpiFragment" />
 </navigation>

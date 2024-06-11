@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imgEpi"
-        android:layout_width="108dp"
-        android:layout_height="114dp"
+        android:layout_width="110dp"
+        android:layout_height="115dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -16,35 +15,35 @@
         app:srcCompat="@drawable/capacete" />
 
     <TextView
-        android:id="@+id/tvNomeepi"
+        android:id="@+id/tvNomeEpi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:inputType="text"
         android:text="Nome"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#fff"
-        app:layout_constraintBottom_toTopOf="@+id/tvIdepi"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgEpi"
-        app:layout_constraintTop_toTopOf="@+id/imgEpi" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgEpi"
+        app:layout_constraintBottom_toTopOf="@+id/tvIdEpi" />
 
     <TextView
-        android:id="@+id/tvIdepi"
+        android:id="@+id/tvIdEpi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:inputType="text"
         android:text="Id"
         android:textColor="#fff"
         android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/imgEpi"
         app:layout_constraintBottom_toBottomOf="@+id/imgEpi"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgEpi"
         app:layout_constraintTop_toTopOf="@+id/imgEpi" />
 </androidx.constraintlayout.widget.ConstraintLayout>
