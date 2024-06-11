@@ -65,7 +65,6 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
                mFuncionarioList.postValue(repository.getFuncionarios())
             } catch (e: Exception) {
                 mErro.postValue(e.message)
-
             }
         }
     }
