@@ -3,7 +3,7 @@ package com.akatsuki.safeguardpro.service.repository
 import android.content.Context
 import com.akatsuki.safeguardpro.service.model.Epi
 import com.akatsuki.safeguardpro.service.repository.remote.EpiService
-import com.rafael.firstapp.service.repository.remote.RetrofitClient
+import com.akatsuki.safeguardpro.service.repository.remote.RetrofitClient
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 
