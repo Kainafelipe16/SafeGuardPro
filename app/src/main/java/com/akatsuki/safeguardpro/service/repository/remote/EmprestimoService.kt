@@ -18,7 +18,6 @@ interface EmprestimoService {
     @Multipart
     @POST("addEmprestimo")
     suspend fun createEmprestimo(
-        @Part("emprestimo_id") emprestimo_id: RequestBody,
         @Part("dataEmprestimo") dataEmprestimo: RequestBody,
         @Part("funcionario_fk") funcionario_fk: RequestBody,
         @Part("epi_fk") epi_fk: RequestBody,
@@ -30,7 +29,7 @@ interface EmprestimoService {
     @Multipart
     @PUT("updateEmprestimo/{emprestimo_id}")
     suspend fun updateEmprestimo(
-        @Part("emprestimo_id") emprestimo_id: Int,
+        @Path("emprestimo_id") emprestimo_id: Int,
         @Part("dataEmprestimo") dataEmprestimo: RequestBody,
         @Part("funcionario_fk") funcionario_fk: RequestBody,
         @Part("epi_fk") epi_fk: RequestBody,

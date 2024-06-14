@@ -13,7 +13,6 @@ class EmprestimoRepository(context: Context) {
 
     suspend fun insertEmprestimo(emprestimo: Emprestimo): Emprestimo {
         return mRemote.createEmprestimo(
-            emprestimo_id = emprestimo.emprestimo_id.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
             dataEmprestimo = emprestimo.dataEmprestimo.toRequestBody("text/plain".toMediaTypeOrNull()),
             funcionario_fk = emprestimo.funcionario_fk.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
             epi_fk = emprestimo.epi_fk.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
@@ -29,12 +28,12 @@ class EmprestimoRepository(context: Context) {
         }
     }
 
-    suspend fun updateEmprestimo(id: Int, emprestimo: Emprestimo): Emprestimo {
+    suspend fun updateEmprestimo(emprestimo: Emprestimo): Emprestimo {
         return mRemote.updateEmprestimo(
             dataEmprestimo = emprestimo.dataEmprestimo.toRequestBody("text/plain".toMediaTypeOrNull()),
             funcionario_fk = emprestimo.funcionario_fk.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
             epi_fk = emprestimo.epi_fk.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
-            emprestimo_id = id
+            emprestimo_id = emprestimo.emprestimo_id
         ).body() ?: emprestimoEmpty
     }
 

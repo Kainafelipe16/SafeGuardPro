@@ -6,20 +6,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.akatsuki.safeguardpro.databinding.ListItemEmprestimoBinding
 import com.akatsuki.safeguardpro.service.model.Emprestimo
 
-class EmprestimoAdapter(emprestimo: List<Emprestimo>?, private val clickListener: (Emprestimo) -> Unit) :
-    RecyclerView.Adapter<EmprestimoAdapter.EmprestimoViewHolder>(){
+class EmprestimoAdapter(
+    emprestimos: List<Emprestimo>?,
+    private val clickListener: (Emprestimo) -> Unit
+) : RecyclerView.Adapter<EmprestimoAdapter.EmprestimoViewHolder>() {
 
-        private var emprestimoList : List<Emprestimo> = arrayListOf()
+    private var emprestimoList: List<Emprestimo> = arrayListOf()
 
-        class EmprestimoViewHolder(private val binding: ListItemEmprestimoBinding) :
-                RecyclerView.ViewHolder(binding.root) {
-                    fun bind(emprestimo: Emprestimo, clickListener: (Emprestimo) -> Unit) {
-                        binding.tvIdEmprestimo.text = emprestimo.emprestimo_id.toString()
-                        binding.tvDataEmprestimo.text = emprestimo.dataEmprestimo
-                        binding.tvIdFuncionario.text = emprestimo.funcionario_fk.toString()
-                        binding.tvIdEpi.text = emprestimo.epi_fk.toString()
-                    }
-                }
+    class EmprestimoViewHolder(private val binding: ListItemEmprestimoBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(emprestimo: Emprestimo, clickListener: (Emprestimo) -> Unit) {
+            binding.tvIdEmprestimo.text = emprestimo.emprestimo_id.toString()
+            binding.tvDataEmprestimo.text = emprestimo.dataEmprestimo
+            binding.tvIdFuncionario.text = emprestimo.funcionario_fk.toString()
+            binding.tvIdEpi.text = emprestimo.epi_fk.toString()
+
+            binding.root.setOnClickListener {
+                clickListener(emprestimo)
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmprestimoViewHolder {
         val ListItemEmprestimoBinding =
@@ -39,4 +45,4 @@ class EmprestimoAdapter(emprestimo: List<Emprestimo>?, private val clickListener
         emprestimoList = list
         notifyDataSetChanged()
     }
-    }
+}

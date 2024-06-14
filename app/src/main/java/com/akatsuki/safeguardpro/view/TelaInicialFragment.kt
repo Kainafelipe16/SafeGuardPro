@@ -13,21 +13,21 @@ import com.akatsuki.safeguardpro.databinding.FragmentTelaInicialBinding
 class TelaInicialFragment : Fragment() {
 
     private var _binding: FragmentTelaInicialBinding? = null
-    private val binding: FragmentTelaInicialBinding get() =  _binding!!
+    private val binding: FragmentTelaInicialBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTelaInicialBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-      binding.btnLogar.setOnClickListener {
-          findNavController().navigate(R.id.loginFragment)
-      }
+        binding.btnLogar.setOnClickListener {
+            findNavController().navigate(R.id.loginFragment)
+        }
     }
 }

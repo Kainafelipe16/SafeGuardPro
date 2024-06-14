@@ -16,7 +16,9 @@ class FuncionarioRepository(context: Context) {
             nome = funcionario.nome.toRequestBody("text/plain".toMediaTypeOrNull()),
             sobrenome = funcionario.sobrenome.toRequestBody("text/plain".toMediaTypeOrNull()),
             cpf = funcionario.cpf.toRequestBody("text/plain".toMediaTypeOrNull()),
-            ).body() ?: funcionarioEmpty
+            senha = funcionario.senha.toRequestBody("text/plain".toMediaTypeOrNull()),
+            admin = funcionario.admin.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
+        ).body() ?: funcionarioEmpty
     }
 
     suspend fun getFuncionario(id: Int): Funcionario {
@@ -45,14 +47,14 @@ class FuncionarioRepository(context: Context) {
         return mRemote.getFuncionarios()
     }
 
-    suspend fun updateFuncionario(id: Int, funcionario: Funcionario): Funcionario {
+    suspend fun updateFuncionario(funcionario: Funcionario): Funcionario {
         return mRemote.updateFuncionario(
             nome = funcionario.nome.toRequestBody("text/plain".toMediaTypeOrNull()),
             sobrenome = funcionario.sobrenome.toRequestBody("text/plain".toMediaTypeOrNull()),
             cpf = funcionario.cpf.toRequestBody("text/plain".toMediaTypeOrNull()),
-            funcionarioId = id
+            senha = funcionario.senha.toRequestBody("text/plain".toMediaTypeOrNull()),
+            admin = funcionario.admin.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
+            funcionarioId = funcionario.id
         ).body() ?: funcionarioEmpty
     }
 }
-
-

@@ -34,7 +34,7 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     fun update(funcionario: Funcionario) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val updatedFuncionario = repository.updateFuncionario(funcionario.id, funcionario)
+                val updatedFuncionario = repository.updateFuncionario(funcionario)
                 mUpdatedPessoa.postValue(updatedFuncionario)
             } catch (e: Exception) {
                 mErro.postValue(e.message)
@@ -63,7 +63,6 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun insert(funcionario: Funcionario) {
-
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val createdPessoa = repository.insertFuncionario(funcionario)
@@ -94,5 +93,3 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 }
-
-

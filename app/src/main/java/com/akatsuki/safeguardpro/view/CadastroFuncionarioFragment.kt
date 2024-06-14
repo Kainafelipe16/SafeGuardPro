@@ -1,10 +1,12 @@
 package com.akatsuki.safeguardpro.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.akatsuki.safeguardpro.databinding.FragmentCadastroFuncionarioBinding
@@ -21,7 +23,7 @@ class CadastroFuncionarioFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCadastroFuncionarioBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -33,31 +35,58 @@ class CadastroFuncionarioFragment : Fragment() {
         }
 
         binding.btnCadastrar.setOnClickListener {
-            var nome = binding.edtNome.editableText.toString()
-            var sobrenome = binding.edtSobrenome.editableText.toString()
-            var cpf = binding.edtCpf.editableText.toString()
+            val nome = binding.edtNome.editableText.toString()
+            val sobrenome = binding.edtSobrenome.editableText.toString()
+            val cpf = binding.edtCpf.editableText.toString()
+//            TODO Add no xml
+//            val senha = binding.edtSenha.editableText.toString()
+//            val admin = binding.chkAdmin.isChecked()
 
+            if (nome != "" && sobrenome != "" && cpf != "") {
+                val funcionario = Funcionario(
+                    nome = nome,
+                    sobrenome = sobrenome,
+                    cpf = cpf,
+//                    admin = admin,
+//                    senha = senha
+                )
 
-            val funcionario = Funcionario(
-                nome = nome,
-                sobrenome = sobrenome,
-                cpf = cpf
-            )
+                viewModel.funcionario.value?.let {
+                    funcionario.id = it.id
+                    viewModel.update(funcionario)
+                } ?: run {
+                    viewModel.insert(funcionario)
+                }
 
-            viewModel.funcionario.value?.let {
-                funcionario.id = it.id
-                viewModel.update(funcionario)
-            } ?: run {
-                viewModel.insert(funcionario)
+                binding.edtNome.editableText.clear()
+                binding.edtSobrenome.editableText.clear()
+                binding.edtCpf.editableText.clear()
+//                binding.edtSenha.editableText.clear()
+//                binding.chkAdmin.isChecked() = false
+            } else {
+                Toast.makeText(requireContext(), "Digite os dados", Toast.LENGTH_LONG).show()
             }
+        }
 
-            viewModel.updatedFuncionario.observe(viewLifecycleOwner) {
-                findNavController().navigateUp()
-            }
+        viewModel.funcionario.observe(viewLifecycleOwner) { funcionario ->
+            binding.edtNome.setText(funcionario.nome)
+            binding.edtSobrenome.setText(funcionario.sobrenome)
+            binding.edtCpf.setText(funcionario.cpf)
 
-            viewModel.deletedFuncionario.observe(viewLifecycleOwner) {
-                findNavController().navigateUp()
-            }
+            binding.btnExcluir.visibility = View.VISIBLE
+        }
+
+        viewModel.updatedFuncionario.observe(viewLifecycleOwner) {
+            findNavController().navigateUp()
+        }
+
+        viewModel.deletedFuncionario.observe(viewLifecycleOwner) {
+            findNavController().navigateUp()
+        }
+
+        viewModel.erro.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Erro $it", Toast.LENGTH_LONG).show()
+            Log.e("Erro Cadastro Funcionario", it)
         }
     }
 }

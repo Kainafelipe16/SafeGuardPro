@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.akatsuki.safeguardpro.databinding.ListItemEpiBinding
 import com.akatsuki.safeguardpro.service.model.Epi
 
-class EpiAdapter(epi: List<Epi>?, private val clickListListener: (Epi) -> Unit):
-    RecyclerView.Adapter<EpiAdapter.EpiViewHolder>(){
+class EpiAdapter(epis: List<Epi>?, private val clickListListener: (Epi) -> Unit) :
+    RecyclerView.Adapter<EpiAdapter.EpiViewHolder>() {
 
     //Criar uma lista vazia de EPI's
     private var epiList: List<Epi> = arrayListOf()
@@ -18,6 +18,7 @@ class EpiAdapter(epi: List<Epi>?, private val clickListListener: (Epi) -> Unit):
 
         //Carrega as informações do epi na lista
         fun bind(epi: Epi, clickListListener: (Epi) -> Unit) {
+            //TODO Fazer
 //            binding.tvNomeEpi.text = epi.nomeEpi
 //            binding.tvDescricaoEpi.text = epi.descricao.toString()
 //            binding.tvCA.text = epi.cA

@@ -6,29 +6,40 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.akatsuki.safeguardpro.R
 import com.akatsuki.safeguardpro.databinding.FragmentLoginBinding
+import com.akatsuki.safeguardpro.service.model.Login
+import com.akatsuki.safeguardpro.viewmodel.FuncionarioViewModel
 
 class LoginFragment : Fragment() {
+
+    private val viewModelFuncionario: FuncionarioViewModel by viewModels()
+
     private var _binding: FragmentLoginBinding? = null
     private val binding: FragmentLoginBinding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnLogar.setOnClickListener {
-            val email = binding.edtEmail.editableText.toString()
-            val senha = binding.edtSenha.editableText.toString()
+        var cpf = ""
+        var senha = ""
 
-            if (email != "" && senha != "") {
+        binding.btnLogar.setOnClickListener {
+            cpf = binding.edtCpf.editableText.toString()
+            senha = binding.edtSenha.editableText.toString()
+
+            if (cpf != "" && senha != "") {
+                viewModelFuncionario.getFuncionarioByCpf(cpf)
                 findNavController().navigate(R.id.telaInicialSupervisorFragment)
             } else {
                 AlertDialog.Builder(requireContext())
@@ -37,6 +48,16 @@ class LoginFragment : Fragment() {
                     .setPositiveButton("Ok") { _, _ ->
                     }
                     .show()
+            }
+        }
+
+        viewModelFuncionario.funcionario.observe(viewLifecycleOwner) {
+            if (it.senha == senha && it.cpf == cpf) {
+                Login.userConected(it.id, it.cpf, it.admin)
+
+                findNavController().navigate(R.id.telaInicialSupervisorFragment)
+            } else {
+                Toast.makeText(requireContext(), "Usuario ou senha inválidos", Toast.LENGTH_LONG).show()
             }
         }
     }

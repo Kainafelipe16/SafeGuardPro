@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.akatsuki.safeguardpro.databinding.FragmentDetailFuncionarioBinding
+import com.akatsuki.safeguardpro.viewmodel.FuncionarioViewModel
 
 class DetailFuncionarioFragment : Fragment() {
+    private val viewModel: FuncionarioViewModel by viewModels()
 
     //Criar o binding
     private var _binding: FragmentDetailFuncionarioBinding? = null
@@ -16,9 +19,22 @@ class DetailFuncionarioFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // configurar binding
         _binding = FragmentDetailFuncionarioBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        arguments?.let {
+            viewModel.getFuncionario(it.getInt("funcionarioId"))
+        }
+
+        viewModel.funcionario.observe(viewLifecycleOwner) { funcionario ->
+            binding.tvNomeFuncionario.text = funcionario.nome
+            binding.tvSobrenomeFuncionario.text = funcionario.sobrenome
+            binding.tvCpfFuncionario.text = funcionario.cpf
+        }
     }
 }

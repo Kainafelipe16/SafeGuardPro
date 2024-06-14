@@ -30,7 +30,9 @@ interface FuncionarioService {
     suspend fun createFuncionario(
         @Part("nome") nome: RequestBody,
         @Part("sobrenome") sobrenome: RequestBody,
-        @Part("cpf") cpf: RequestBody
+        @Part("cpf") cpf: RequestBody,
+        @Part("senha") senha: RequestBody,
+        @Part("admin") admin: RequestBody,
     ): Response<Funcionario>
 
     @Multipart
@@ -39,6 +41,8 @@ interface FuncionarioService {
         @Path("funcionario_id") funcionarioId: Int,
         @Part("nome") nome: RequestBody,
         @Part("sobrenome") sobrenome: RequestBody,
-        @Part("cpf") cpf: RequestBody
-        ): Response<Funcionario>
+        @Part("cpf") cpf: RequestBody,
+        @Part("senha") senha: RequestBody,
+        @Part("admin") admin: RequestBody,
+    ): Response<Funcionario>
 }

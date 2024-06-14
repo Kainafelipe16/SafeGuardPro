@@ -43,6 +43,45 @@ class EmprestimoEpiFragment : Fragment() {
             viewModel.getEmprestimo(it.getInt("emprestimo_id"))
         }
 
+        binding.btnAtribuirEpi.setOnClickListener {
+            val cpf = binding.edtCpfFuncionario.editableText.toString()
+            val ca = binding.edtCaEpi.editableText.toString().toInt()
+
+            if (cpf != "" && ca != 0) {
+                viewModelEpi.getEpiByCa(ca)
+                viewModelFuncionario.getFuncionarioByCpf(cpf)
+
+                val emprestimo = Emprestimo(
+                    dataEmprestimo = "",
+                    funcionario_fk = funcionarioCpf.id,
+                    epi_fk = epiCa.id
+                )
+
+                viewModel.emprestimo.value?.let {
+                    emprestimo.emprestimo_id = it.emprestimo_id
+                    viewModel.update(emprestimo)
+                } ?: run {
+                    viewModel.insert(emprestimo)
+                }
+
+                binding.edtCpfFuncionario.editableText.clear()
+                binding.edtCaEpi.editableText.clear()
+            }
+        }
+
+        binding.btnDeletarEmprestimo.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setTitle("Exclusão de epi")
+                .setMessage("Você realmente deseja excluir esse epi?")
+                .setPositiveButton("Sim") { _, _ ->
+                    viewModel.delete(viewModel.emprestimo.value?.emprestimo_id ?: 0)
+                }
+                .setNegativeButton("Não") { _, _ -> }
+                .show()
+
+            binding.btnDeletarEmprestimo.visibility = View.GONE
+        }
+
         viewModel.createEmprestimo.observe(viewLifecycleOwner) {
             if (it.emprestimo_id == 0) {
                 Toast.makeText(
@@ -61,46 +100,6 @@ class EmprestimoEpiFragment : Fragment() {
             }
         }
 
-        viewModel.erro.observe(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), "Erro: $it ", Toast.LENGTH_LONG).show()
-        }
-
-        binding.btnAtribuirEpi.setOnClickListener {
-            var cpf = binding.edtCpfFuncionario.editableText.toString()
-            var ca = binding.edtCaEpi.editableText.toString().toInt()
-
-            if (cpf != "" && ca != 0) {
-                viewModelEpi.getEpiByCa(ca)
-                viewModelFuncionario.getFuncionarioByCpf(cpf)
-
-                val emprestimo = Emprestimo(
-                    dataEmprestimo = "",
-                    funcionario_fk = funcionarioCpf.id,
-                    epi_fk = epiCa.id
-                )
-
-                viewModel.emprestimo.value?.let {
-                    emprestimo.emprestimo_id = it.emprestimo_id
-                    viewModel.update(emprestimo)
-                } ?: run {
-                    viewModel.insert(emprestimo)
-                }
-            }
-        }
-
-        binding.btnDeletarEmprestimo.setOnClickListener {
-            AlertDialog.Builder(requireContext())
-                .setTitle("Exclusão de pessoa")
-                .setMessage("Você realmente deseja excluir essa pessoa?")
-                .setPositiveButton("Sim") { _, _ ->
-                    viewModel.delete(viewModel.emprestimo.value?.emprestimo_id ?: 0)
-                }
-                .setNegativeButton("Não") { _, _ -> }
-                .show()
-
-            binding.btnDeletarEmprestimo.visibility = View.GONE
-        }
-
         viewModelEpi.epi.observe(viewLifecycleOwner) {
             epiCa = it
         }
@@ -115,6 +114,10 @@ class EmprestimoEpiFragment : Fragment() {
 
         viewModel.updateEmprestimo.observe(viewLifecycleOwner) {
             findNavController().navigateUp()
+        }
+
+        viewModel.erro.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Erro: $it ", Toast.LENGTH_LONG).show()
         }
     }
 }

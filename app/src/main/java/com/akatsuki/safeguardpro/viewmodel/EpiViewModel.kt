@@ -20,7 +20,7 @@ class EpiViewModel(application: Application) : AndroidViewModel(application) {
     val epi: LiveData<Epi> = mEpi
 
     private val mCreatedEpi = MutableLiveData<Epi>()
-    val createdepi: LiveData<Epi> = mCreatedEpi
+    val createdEpi: LiveData<Epi> = mCreatedEpi
 
     private val mErro = MutableLiveData<String>()
     val erro: LiveData<String> = mErro
@@ -59,29 +59,26 @@ class EpiViewModel(application: Application) : AndroidViewModel(application) {
             } catch (e: Exception) {
                 mErro.postValue(e.message)
             }
-
         }
     }
 
-    fun getEpiByCa(Ca: Int) {
+    fun getEpiByCa(ca: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                mEpi.postValue(repository.getEpiByCa(Ca))
+                mEpi.postValue(repository.getEpiByCa(ca))
             } catch (e: Exception) {
                 mErro.postValue(e.message)
             }
-
         }
     }
 
     fun update(epi: Epi) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val updatedPessoa = repository.updateEpi(epi.id, epi)
+                val updatedPessoa = repository.updateEpi(epi)
                 mUpdatedEpi.postValue(updatedPessoa)
             } catch (e: Exception) {
                 mErro.postValue(e.message)
-
             }
         }
     }

@@ -14,8 +14,7 @@ import java.text.ParsePosition
 class FuncionarioAdapter(
     funcionario: List<Funcionario>?,
     private val clickListener: (Funcionario) -> Unit
-) :
-    RecyclerView.Adapter<FuncionarioAdapter.FuncionarioViewHolder>() {
+) : RecyclerView.Adapter<FuncionarioAdapter.FuncionarioViewHolder>() {
 
     private var funcionarioList: List<Funcionario> = arrayListOf()
 
@@ -26,6 +25,11 @@ class FuncionarioAdapter(
             binding.edtNome.text = funcionario.nome
 //            binding.tvSobrenome.text = funcionario.sobrenome.toString()
 //            binding.tvCpf.text = funcionario.cpf
+
+            //Configura o click de algum item da lista
+            binding.root.setOnClickListener {
+                clickListener(funcionario)
+            }
         }
     }
 
@@ -52,5 +56,3 @@ class FuncionarioAdapter(
         notifyDataSetChanged()
     }
 }
-
-

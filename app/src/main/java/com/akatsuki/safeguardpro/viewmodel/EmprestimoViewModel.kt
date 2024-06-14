@@ -34,7 +34,7 @@ class EmprestimoViewModel(application: Application) : AndroidViewModel(applicati
     fun update(emprestimo: Emprestimo) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val updateEmprestimo = repository.updateEmprestimo(emprestimo.emprestimo_id, emprestimo)
+                val updateEmprestimo = repository.updateEmprestimo(emprestimo)
                 mUpdatedEmprestimo.postValue(updateEmprestimo)
             } catch (e: Exception){
                 mErro.postValue(e.message)

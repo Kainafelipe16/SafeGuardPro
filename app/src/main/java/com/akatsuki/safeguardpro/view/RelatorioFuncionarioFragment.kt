@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akatsuki.safeguardpro.R
 import com.akatsuki.safeguardpro.databinding.FragmentRelatorioFuncionarioBinding
+import com.akatsuki.safeguardpro.service.model.Login
 import com.akatsuki.safeguardpro.view.adapter.FuncionarioAdapter
 import com.akatsuki.safeguardpro.viewmodel.FuncionarioViewModel
 
@@ -26,8 +27,7 @@ class RelatorioFuncionarioFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         _binding = FragmentRelatorioFuncionarioBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -40,8 +40,11 @@ class RelatorioFuncionarioFragment : Fragment() {
             val funcionarioBundle = Bundle()
             funcionarioBundle.putInt("funcionarioId", funcionario.id)
             arguments = funcionarioBundle
-            findNavController().navigate(R.id.detailFuncionarioFragment, arguments)
-
+            if (Login.userAdmin) {
+                findNavController().navigate(R.id.cadastroFuncionarioFragment, arguments)
+            } else {
+                findNavController().navigate(R.id.detailFuncionarioFragment, arguments)
+            }
         }
 
         //Configura a recycler

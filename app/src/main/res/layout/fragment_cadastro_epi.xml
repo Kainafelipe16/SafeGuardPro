@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/shape_gradient"
@@ -26,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCadastroEpi"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="65dp"
         android:layout_marginHorizontal="60dp"
         android:hint="Nome"
         android:inputType="text"
@@ -39,11 +40,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtNomeEpi"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         android:layout_marginHorizontal="60dp"
         android:hint="Descrição"
         android:textColorHint="@color/white"
-        android:inputType="text|date" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/edtCa"
@@ -52,11 +53,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtDescricao"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         android:layout_marginHorizontal="60dp"
-        android:hint="Certicado de aprovação"
+        android:hint="Certicado de aprovação(ca)"
         android:textColorHint="@color/white"
-        android:inputType="text|date" />
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/edtValidadeFabricacao"
@@ -65,7 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtCa"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         android:layout_marginHorizontal="60dp"
         android:hint="Validade por data de Fabricação"
         android:textColorHint="@color/white"
@@ -78,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtValidadeFabricacao"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         android:layout_marginHorizontal="60dp"
         android:hint="Validade por tempo de uso:"
         android:textColorHint="@color/white"
@@ -88,13 +89,23 @@
         android:id="@+id/btnCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="50dp"
         android:layout_marginHorizontal="60dp"
         android:backgroundTint="#120F0F"
         android:text="Cadastrar"
-        android:textSize="23sp" />
+        android:textSize="23sp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/edtValidadeTempoUso" />
+
+    <Button
+        android:id="@+id/btnExcluir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:backgroundTint="#120F0F"
+        android:text="Excluir"
+        android:textSize="23sp"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
