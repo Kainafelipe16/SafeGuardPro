@@ -100,12 +100,20 @@ class EmprestimoEpiFragment : Fragment() {
             }
         }
 
+        viewModel.emprestimo.observe(viewLifecycleOwner) {
+            viewModelEpi.getEpi(it.epi_fk)
+            viewModelFuncionario.getFuncionario(it.funcionario_fk)
+            binding.btnDeletarEmprestimo.visibility = View.VISIBLE
+        }
+
         viewModelEpi.epi.observe(viewLifecycleOwner) {
             epiCa = it
+            binding.edtCaEpi.setText(it.ca)
         }
 
         viewModelFuncionario.funcionario.observe(viewLifecycleOwner) {
             funcionarioCpf = it
+            binding.edtCpfFuncionario.setText(it.cpf)
         }
 
         viewModel.deleteEmprestimo.observe(viewLifecycleOwner) {
