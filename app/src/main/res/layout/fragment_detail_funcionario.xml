@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/lblNomeFuncionario"
         android:layout_marginStart="25dp"
         android:textSize="23sp"
-        android:text="nome funcionario"
+        android:text="Caio"
         android:textColor="@color/white" />
 
     <TextView
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="@+id/lblSobrenomeFuncionario"
         android:layout_marginStart="25dp"
         android:textSize="23sp"
-        android:text="sobrenome funcionario"
+        android:text="Alves"
         android:textColor="@color/white" />
 
 
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toTopOf="@+id/lblCpfFuncionario"
         android:layout_marginStart="25dp"
         android:textSize="23sp"
-        android:text="cpf funcionario"
+        android:text="90281946785"
         android:textColor="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

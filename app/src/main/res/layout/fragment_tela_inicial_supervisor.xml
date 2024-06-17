@@ -41,9 +41,9 @@
                 android:id="@+id/tvBemVindo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="BEM VINDO,  KAINÃ !"
-                android:textColor="@color/white"
                 android:gravity="center"
+                android:text="SEJAM BEM-VINDOS"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>

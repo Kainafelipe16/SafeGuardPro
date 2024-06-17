@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/edtDescricao"
         android:layout_marginTop="25dp"
         android:layout_marginHorizontal="60dp"
-        android:hint="Certicado de aprovação(ca)"
+        android:hint="Certificado de aprovação(CA)"
         android:textColorHint="@color/white"
         android:inputType="number" />
 
@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@id/edtCa"
         android:layout_marginTop="25dp"
         android:layout_marginHorizontal="60dp"
-        android:hint="Validade por data de Fabricação"
+        android:hint="Data de fabricação"
         android:textColorHint="@color/white"
         android:inputType="text|date" />
 
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@id/edtValidadeFabricacao"
         android:layout_marginTop="25dp"
         android:layout_marginHorizontal="60dp"
-        android:hint="Validade por tempo de uso:"
+        android:hint="Tempo de uso"
         android:textColorHint="@color/white"
         android:inputType="text|date" />
 
