@@ -15,10 +15,8 @@ import com.akatsuki.safeguardpro.databinding.FragmentRelatorioEpiBinding
 import com.akatsuki.safeguardpro.service.model.Epi
 import com.akatsuki.safeguardpro.service.model.Login
 import com.akatsuki.safeguardpro.view.adapter.EpiAdapter
-import com.akatsuki.safeguardpro.view.adapter.FuncionarioAdapter
 import com.akatsuki.safeguardpro.viewmodel.EmprestimoViewModel
 import com.akatsuki.safeguardpro.viewmodel.EpiViewModel
-import com.akatsuki.safeguardpro.viewmodel.FuncionarioViewModel
 
 class RelatorioEpiFragment : Fragment() {
     private val viewModel: EpiViewModel by viewModels()
@@ -44,7 +42,7 @@ class RelatorioEpiFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Quando clicar em algum item da lista
-        adapter = EpiAdapter(viewModel.epiList.value) { epi ->
+        adapter = EpiAdapter { epi ->
             val epiBundle = Bundle()
             epiBundle.putInt("epiId", epi.id)
             arguments = epiBundle

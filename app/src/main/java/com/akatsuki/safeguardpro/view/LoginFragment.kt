@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
 
                 findNavController().navigate(R.id.telaInicialSupervisorFragment)
             } else {
-                Toast.makeText(requireContext(), "Usuario ou senha inválidos", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Usuário ou senha inválidos !!", Toast.LENGTH_LONG).show()
             }
         }
     }

@@ -38,17 +38,16 @@ class CadastroFuncionarioFragment : Fragment() {
             val nome = binding.edtNome.editableText.toString()
             val sobrenome = binding.edtSobrenome.editableText.toString()
             val cpf = binding.edtCpf.editableText.toString()
-//            TODO Add no xml
-//            val senha = binding.edtSenha.editableText.toString()
-//            val admin = binding.chkAdmin.isChecked()
+            val senha = binding.edtSenha.editableText.toString()
+            val admin = binding.chkAdmin.isChecked
 
-            if (nome != "" && sobrenome != "" && cpf != "") {
+            if (nome != "" && sobrenome != "" && cpf != "" && senha != "") {
                 val funcionario = Funcionario(
                     nome = nome,
                     sobrenome = sobrenome,
                     cpf = cpf,
-//                    admin = admin,
-//                    senha = senha
+                    admin = admin,
+                    senha = senha
                 )
 
                 viewModel.funcionario.value?.let {
@@ -61,8 +60,8 @@ class CadastroFuncionarioFragment : Fragment() {
                 binding.edtNome.editableText.clear()
                 binding.edtSobrenome.editableText.clear()
                 binding.edtCpf.editableText.clear()
-//                binding.edtSenha.editableText.clear()
-//                binding.chkAdmin.isChecked() = false
+                binding.edtSenha.editableText.clear()
+                binding.chkAdmin.isChecked = false
             } else {
                 Toast.makeText(requireContext(), "Digite os dados", Toast.LENGTH_LONG).show()
             }
@@ -72,6 +71,8 @@ class CadastroFuncionarioFragment : Fragment() {
             binding.edtNome.setText(funcionario.nome)
             binding.edtSobrenome.setText(funcionario.sobrenome)
             binding.edtCpf.setText(funcionario.cpf)
+            binding.edtSenha.setText(funcionario.senha)
+            binding.chkAdmin.isChecked = funcionario.admin
 
             binding.btnExcluir.visibility = View.VISIBLE
         }
@@ -86,7 +87,7 @@ class CadastroFuncionarioFragment : Fragment() {
 
         viewModel.erro.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), "Erro $it", Toast.LENGTH_LONG).show()
-            Log.e("Erro Cadastro Funcionario", it)
+            Log.e("Erro ao caadastrar funcionário !!", it)
         }
     }
 }
