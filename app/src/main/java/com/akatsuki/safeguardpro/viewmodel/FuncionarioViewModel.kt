@@ -14,7 +14,7 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     private val repository = FuncionarioRepository(application)
 
     private val mCreatedFuncionario = MutableLiveData<Funcionario>()
-    val createfuncionario: LiveData<Funcionario> = mCreatedFuncionario
+    val createdFuncionario: LiveData<Funcionario> = mCreatedFuncionario
 
     private val mErro = MutableLiveData<String>()
     val erro: LiveData<String> = mErro
@@ -76,7 +76,7 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     fun getFuncionario(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                mCreatedFuncionario.postValue(repository.getFuncionario(id))
+                mFuncionario.postValue(repository.getFuncionario(id))
             } catch (e: Exception) {
                 mErro.postValue(e.message)
             }
@@ -86,7 +86,7 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     fun getFuncionarioByCpf(cpf: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                mCreatedFuncionario.postValue(repository.getFuncionarioByCpf(cpf))
+                mFuncionario.postValue(repository.getFuncionarioByCpf(cpf))
             } catch (e: Exception) {
                 mErro.postValue(e.message)
             }

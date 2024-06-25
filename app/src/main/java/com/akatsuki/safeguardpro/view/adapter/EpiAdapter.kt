@@ -5,8 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.akatsuki.safeguardpro.databinding.ListItemEpiBinding
 import com.akatsuki.safeguardpro.service.model.Epi
+import com.akatsuki.safeguardpro.service.model.Funcionario
 
-class EpiAdapter(private val clickListListener: (Epi) -> Unit) :
+class EpiAdapter(
+    epis: List<Epi>?,
+    private val clickListListener: (Epi) -> Unit
+) :
     RecyclerView.Adapter<EpiAdapter.EpiViewHolder>() {
 
     //Criar uma lista vazia de EPI's

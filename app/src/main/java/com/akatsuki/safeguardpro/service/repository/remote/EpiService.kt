@@ -13,36 +13,36 @@ import retrofit2.http.Path
 
 interface EpiService {
 
-    @GET("listarEpi")
+    @GET("selectEpis")
     suspend fun getEpis(): List<Epi>
 
     @Multipart
     @POST("addEpi")
     suspend fun createEpi(
-        @Part("nomeEpi") nomeEpi: RequestBody,
+        @Part("nome") nomeEpi: RequestBody,
         @Part("descricao") descricao: RequestBody,
         @Part("ca") ca: RequestBody,
-        @Part("validadeFabricacao") validadeFabricacao: RequestBody,
-        @Part("validadeTempoUso") validadeTempoUso: RequestBody
+        @Part("validade") validadeFabricacao: RequestBody,
+        @Part("tempo_uso") validadeTempoUso: RequestBody
     ): Response<Epi>
 
-    @GET("selectEPI/{epi_id")
-    suspend fun getEpiById(@Path("epi_id") id: Int): Response<List<Epi>>
+    @GET("selectEpiById/{id}")
+    suspend fun getEpiById(@Path("id") id: Int): Response<List<Epi>>
 
-    @GET("selectEpiCa/{ca}")
+    @GET("selectEpiByCa/{ca}")
     suspend fun getEpiByCa(@Path("ca") ca: Int): Response<List<Epi>>
 
     @Multipart
-    @PUT("updateEpi/{epi_id}")
+    @PUT("updateEpiById/{id}")
     suspend fun updateEpi(
-        @Path("epi_id") epiId: Int,
-        @Part("nomeEpi") nomeEpi: RequestBody,
+        @Path("id") epiId: Int,
+        @Part("nome") nomeEpi: RequestBody,
         @Part("descricao") descricao: RequestBody,
         @Part("ca") ca: RequestBody,
-        @Part("validadeFabricacao") validadeFabricacao: RequestBody,
-        @Part("validadeTempoUso") validadeTempoUso: RequestBody
+        @Part("validade") validadeFabricacao: RequestBody,
+        @Part("tempo_uso") validadeTempoUso: RequestBody
     ): Response<Epi>
 
-    @DELETE("deleteEpi/{epi_id}")
+    @DELETE("deleteEpiById/{epi_id}")
     suspend fun deleteEpiById(@Path("epi_id") id: Int): Response<Epi>
 }

@@ -12,10 +12,6 @@
         android:name="com.akatsuki.safeguardpro.view.CadastroFuncionarioFragment"
         android:label="" />
     <fragment
-        android:id="@+id/detailEpiFragment"
-        android:name="com.akatsuki.safeguardpro.view.DetailEpiFragment"
-        android:label="" />
-    <fragment
         android:id="@+id/detailFuncionarioFragment"
         android:name="com.akatsuki.safeguardpro.view.DetailFuncionarioFragment"
         android:label="" />

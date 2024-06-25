@@ -19,12 +19,11 @@ class FuncionarioAdapter(
     private var funcionarioList: List<Funcionario> = arrayListOf()
 
     class FuncionarioViewHolder(private val binding: ListItemFuncionarioBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+        ViewHolder(binding.root) {
 
         fun bind(funcionario: Funcionario, clickListener: (Funcionario) -> Unit) {
             binding.edtNome.text = funcionario.nome
-//            binding.tvSobrenome.text = funcionario.sobrenome.toString()
-//            binding.tvCpf.text = funcionario.cpf
+            binding.edtID.text = funcionario.cpf
 
             //Configura o click de algum item da lista
             binding.root.setOnClickListener {
@@ -43,7 +42,7 @@ class FuncionarioAdapter(
         return FuncionarioViewHolder(listItemFuncionarioBinding)
     }
 
-    override fun onBindViewHolder(holder: FuncionarioAdapter.FuncionarioViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FuncionarioViewHolder, position: Int) {
         holder.bind(funcionarioList[position], clickListener)
     }
 

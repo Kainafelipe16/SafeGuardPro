@@ -1,5 +1,6 @@
 package com.akatsuki.safeguardpro.view
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -65,6 +66,17 @@ class CadastroFuncionarioFragment : Fragment() {
             } else {
                 Toast.makeText(requireContext(), "Digite os dados", Toast.LENGTH_LONG).show()
             }
+        }
+
+        binding.btnExcluir.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setTitle("Exclusão de Funcionarios")
+                .setMessage("Você realmente deseja excluir?")
+                .setPositiveButton("Sim") { _, _ ->
+                    viewModel.deleteFuncionario(viewModel.funcionario.value?.id ?: 0)
+                }
+                .setNegativeButton("Não") { _, _ -> }
+                .show()
         }
 
         viewModel.funcionario.observe(viewLifecycleOwner) { funcionario ->

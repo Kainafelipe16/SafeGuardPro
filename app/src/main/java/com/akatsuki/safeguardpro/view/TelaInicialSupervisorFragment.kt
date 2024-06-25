@@ -38,7 +38,10 @@ class TelaInicialSupervisorFragment : Fragment() {
             }
         } else {
             binding.cvRelatorioFuncionario.setOnClickListener {
-                findNavController().navigate(R.id.detailFuncionarioFragment)
+                val funcionarioBundle = Bundle()
+                funcionarioBundle.putInt("funcionarioId", Login.userId)
+                arguments = funcionarioBundle
+                findNavController().navigate(R.id.detailFuncionarioFragment, arguments)
             }
 
             binding.cvRelatorioEpi.setOnClickListener {

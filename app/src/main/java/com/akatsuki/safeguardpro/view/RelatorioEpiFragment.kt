@@ -42,7 +42,7 @@ class RelatorioEpiFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Quando clicar em algum item da lista
-        adapter = EpiAdapter { epi ->
+        adapter = EpiAdapter(viewModel.epiList.value) { epi ->
             val epiBundle = Bundle()
             epiBundle.putInt("epiId", epi.id)
             arguments = epiBundle

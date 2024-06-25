@@ -95,7 +95,7 @@ class CadastroEpiFragment : Fragment() {
         viewModel.epi.observe(viewLifecycleOwner) {
             binding.edtNomeEpi.setText(it.nomeEpi)
             binding.edtDescricao.setText(it.descricao)
-            binding.edtCa.setText(it.ca)
+            binding.edtCa.setText(it.ca.toString())
             binding.edtValidadeFabricacao.setText(it.validadeFabricacao)
             binding.edtValidadeTempoUso.setText(it.validadeTempoUso)
 
